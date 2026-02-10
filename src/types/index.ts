@@ -119,6 +119,33 @@ export interface Feature {
   icon: string
 }
 
+export interface JourneyStep {
+  step: number
+  title: string
+  description: string
+  actor: 'customer' | 'us' | 'stripe' | 'dhl' | 'us-contact' | 'cleaner'
+}
+
+export interface CustomerJourney {
+  modelId: string
+  modelName: string
+  brand: 'rotate' | 'edit'
+  steps: JourneyStep[]
+}
+
+export interface Policy {
+  id: string
+  title: string
+  items: { label: string; description: string }[]
+}
+
+export interface LegalItem {
+  id: string
+  title: string
+  description: string
+  done: boolean
+}
+
 export interface BusinessModel {
   id: string
   brand: 'rotate' | 'edit'

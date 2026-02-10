@@ -10,6 +10,9 @@ import { BudgetBurn } from '@/components/dashboard/budget-burn'
 import { FinancialProjections } from '@/components/dashboard/financial-projections'
 import { RiskHeatmap } from '@/components/dashboard/risk-heatmap'
 import { InventoryCharts } from '@/components/dashboard/inventory-charts'
+import { CustomerJourneys } from '@/components/dashboard/customer-journeys'
+import { PoliciesSection } from '@/components/dashboard/policies-section'
+import { OperationsChecklist } from '@/components/dashboard/operations-checklist'
 import { Milestones } from '@/components/dashboard/milestones'
 
 export default function DashboardPage() {
@@ -29,12 +32,15 @@ export default function DashboardPage() {
       <div className="max-w-lg mx-auto px-4 py-4 space-y-7">
         <StatusOverview />
         <ModelComparison />
+        <CustomerJourneys />
+        <PoliciesSection />
         <DecisionsBoard />
         <TimelineChart />
         <BudgetBurn />
         <FinancialProjections />
         <RiskHeatmap />
         <InventoryCharts />
+        <OperationsChecklist />
         <Milestones />
 
         <div className="h-4" />
