@@ -2,63 +2,65 @@ import { BudgetItem, MonthProjection } from '@/types'
 
 export const totalBudget = 10000
 
-// v3 — DHL-direct from KZ, multi-model testing, both brands US
+// v4 — content-first, 3 models, $2K ads, DHL-direct
 export const budgetAllocation: BudgetItem[] = [
-  { category: 'Meta Ads', amount: 4000, percentage: 40 },
-  { category: 'DHL Shipping (KZ→US)', amount: 1500, percentage: 15 },
-  { category: 'Customs & Duties', amount: 800, percentage: 8 },
-  { category: 'Content & Photo', amount: 600, percentage: 6 },
-  { category: 'Cleaning (US-side)', amount: 400, percentage: 4 },
+  { category: 'DHL Shipping (KZ→US)', amount: 2500, percentage: 25 },
+  { category: 'Meta Ads', amount: 1200, percentage: 12 },
+  { category: 'Micro-influencers', amount: 800, percentage: 8 },
+  { category: 'Customs & Duties', amount: 1200, percentage: 12 },
+  { category: 'Content & Photo', amount: 500, percentage: 5 },
+  { category: 'Cleaning (US-side)', amount: 600, percentage: 6 },
   { category: 'Branded Packaging', amount: 400, percentage: 4 },
   { category: 'Insurance', amount: 400, percentage: 4 },
-  { category: 'Returns Handling (US)', amount: 300, percentage: 3 },
+  { category: 'Returns Handling (US)', amount: 400, percentage: 4 },
   { category: 'Tech & Tools', amount: 200, percentage: 2 },
-  { category: 'Buffer', amount: 400, percentage: 4 },
+  { category: 'Pre-position inventory (US)', amount: 500, percentage: 5 },
+  { category: 'Buffer', amount: 300, percentage: 3 },
 ]
 
-// v3 — blended across 7 models, conservative
-// Assumes: avg $160 ARPU blended, 15% churn, Meta CAC $80-100
+// v4 — content-first funnel, Scenario B ($2K ads)
+// Weeks 1-4: organic only. Weeks 5+: influencers + Meta
 export const monthlyProjections: MonthProjection[] = [
-  { month: 1, label: 'Month 1', subscribers: 7, revenue: 1120, costs: 1700, net: -580, cumulative: -580 },
-  { month: 2, label: 'Month 2', subscribers: 15, revenue: 2400, costs: 2350, net: 50, cumulative: -530 },
-  { month: 3, label: 'Month 3', subscribers: 24, revenue: 3840, costs: 3200, net: 640, cumulative: 110 },
-  { month: 4, label: 'Month 4', subscribers: 32, revenue: 5120, costs: 4000, net: 1120, cumulative: 1230 },
-  { month: 5, label: 'Month 5', subscribers: 38, revenue: 6080, costs: 4600, net: 1480, cumulative: 2710 },
-  { month: 6, label: 'Month 6', subscribers: 45, revenue: 7200, costs: 5200, net: 2000, cumulative: 4710 },
+  { month: 1, label: 'W1-4 Organic', subscribers: 5, revenue: 475, costs: 550, net: -75, cumulative: -75 },
+  { month: 2, label: 'W5-8 +Influencers', subscribers: 15, revenue: 1475, costs: 1350, net: 125, cumulative: 50 },
+  { month: 3, label: 'W9-12 +Meta Ads', subscribers: 28, revenue: 2800, costs: 2100, net: 700, cumulative: 750 },
+  { month: 4, label: 'Scale winner', subscribers: 38, revenue: 3900, costs: 2700, net: 1200, cumulative: 1950 },
+  { month: 5, label: 'Grow', subscribers: 48, revenue: 5000, costs: 3300, net: 1700, cumulative: 3650 },
+  { month: 6, label: 'Optimize', subscribers: 55, revenue: 5800, costs: 3700, net: 2100, cumulative: 5750 },
 ]
 
-// v3 — DHL-direct model, returns to US contact
+// v4 — 3 models, content-first acquisition
 export const breakEven = {
-  combined: { fixedCosts: 1100, avgContributionMargin: 73, subscribers: 15, targetWeek: 10 },
-  rotate: { fixedCosts: 600, contributionMargin: 59, subscribers: 10 },
-  edit: { fixedCosts: 500, contributionMargin: 109, subscribers: 5 },
+  combined: { fixedCosts: 800, avgContributionMargin: 78, subscribers: 11, targetWeek: 6 },
+  rotate: { fixedCosts: 300, contributionMargin: 71.5, subscribers: 5 },
+  edit: { fixedCosts: 500, contributionMargin: 82, subscribers: 6 },
 }
 
-// v3 — DHL-direct shipping, blended across models
-// Shipping: KZ→US $30/item (DHL -30%), US return $10 (domestic)
+// v4 — DHL-direct, 3 models blended
 export const unitEconomics = {
   rotate: {
-    arpu: 132, variableCost: 73, contributionMargin: 59, marginPercent: 45,
-    cac: 80, ltv: 354, ltvCacRatio: '4:1',
-    note: 'Blended R1+R2+R3. R2 (Rent-to-Own) skews margin up.',
+    arpu: 79, variableCost: 7.5, contributionMargin: 71.5, marginPercent: 90,
+    cac: 50, ltv: 858, ltvCacRatio: '17:1',
+    note: 'Rent-to-Own only. Best margin, no returns. LTV = 12 months.',
   },
   edit: {
-    arpu: 232, variableCost: 123, contributionMargin: 109, marginPercent: 47,
-    cac: 100, ltv: 654, ltvCacRatio: '7:1',
-    note: 'Blended E1+E2+E3+E4. E4 (Full Wardrobe) skews ARPU up.',
+    arpu: 137, variableCost: 55.5, contributionMargin: 81.5, marginPercent: 60,
+    cac: 70, ltv: 489, ltvCacRatio: '7:1',
+    note: 'Blended E1 Membership + E3 Event. E3 pre-positioned = 74% margin.',
   },
   blended: {
-    arpu: 173, variableCost: 93, contributionMargin: 80, marginPercent: 46,
-    cac: 88, ltv: 480, ltvCacRatio: '5:1',
-    note: 'All 7 models averaged. Target: identify top 2-3 by Week 12.',
+    arpu: 118, variableCost: 40, contributionMargin: 78, marginPercent: 66,
+    cac: 57, ltv: 612, ltvCacRatio: '11:1',
+    note: 'Content-first CAC ($0 organic, $50 influencer, $167 Meta). Blended $57.',
   },
 }
 
 // DHL shipping reference
 export const shippingEconomics = {
-  dhlDiscount: 30, // percent
-  kzToUs: 30,      // per item, after discount
-  usReturn: 10,    // domestic return to US contact
-  roundTrip: 40,   // per swap
-  note: 'Returns to US-based contact, not KZ. Reduces return cost from $35 intl to $10 domestic.',
+  dhlDiscount: 30,
+  kzToUs: 30,
+  usReturn: 10,
+  roundTrip: 40,
+  prePositioned: { domestic: 10, roundTrip: 20 },
+  note: 'Pre-position 20-30 popular items at US contact for Event Rental (E3). Domestic shipping $10 vs $30 DHL.',
 }

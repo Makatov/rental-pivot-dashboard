@@ -1,67 +1,60 @@
 import { Decision } from '@/types'
 
-// v3 — multi-model testing, DHL-direct, both brands US
+// v4 — 3 models, content-first, DHL-direct
 export const decisions: Decision[] = [
   {
-    id: 'D1', status: 'decided', title: 'Both Brands Target US',
-    description: 'rotate (accessible) and ÉDIT (premium) both launch in the US. Different positioning, different business models.',
-    details: 'No London. Both brands test different subscription/rental models across US cities. ÉDIT repositioned from London premium to US premium.',
+    id: 'D1', status: 'decided', title: '3 Models, Not 7',
+    description: 'Rent-to-Own (rotate), Membership+Rental (ÉDIT), Event Rental (ÉDIT). Killed 4 models with weak economics.',
+    details: 'Killed: R1 (RTR-clone, they\'re not profitable after 15 years), R3 (shipping costs kill box model), E2 (quarterly = low touchpoint), E4 ($499/mo = no market for unknown brand).',
   },
   {
-    id: 'D2', status: 'decided', title: '7 Business Models to Test',
-    description: 'rotate: Subscription+Swap, Rent-to-Own, Try&Buy. ÉDIT: Membership+Rental, Seasonal Capsule, Event Rental, Full Wardrobe.',
-    details: 'Goal: identify top 2-3 models by Week 12. Kill underperformers fast. Each model tested with separate ad sets.',
+    id: 'D2', status: 'decided', title: 'Content-First, Ads-Second',
+    description: 'Instagram organic + DM sales first (Weeks 1-4, $0). Then micro-influencers ($800). Meta Ads only on validated models ($1,200).',
+    details: 'RTR got 80% of customers through word-of-mouth. 12 micro-influencers beat 2 macro by 340% engagement + 2.8x conversion. Each of our 2,347 items = content.',
   },
   {
     id: 'D3', status: 'decided', title: 'DHL Direct from KZ',
-    description: 'Ship items directly from KZ to US customers via DHL (-30% discount). No NYC warehouse.',
-    details: 'DHL contact with -30% rate. KZ→US ~$30/item. Returns go to US-based contact ($10 domestic) not back to KZ. Eliminates 3PL/warehouse cost entirely.',
+    description: 'Ship directly via DHL (-30%). No warehouse. Returns to US contact ($10 domestic).',
+    details: 'At <50 subs, DHL-direct is cheaper than hub model. Pre-position 20-30 popular items at US contact for Event Rental.',
   },
   {
-    id: 'D4', status: 'decided', title: 'Subscription + Buyout Base Model',
-    description: 'Core mechanic: rent items, after 12 months of renting same item pay 5% to own it.',
-    details: 'Applied to R1, E2, E4. Variations: R2 (auto-own after 12 payments), R3/E3 (instant buy at discount), E1 (member discount buy).',
+    id: 'D4', status: 'decided', title: 'Subscription + Buyout Core',
+    description: 'Rent 12 months → own at 5% (R2: auto-own at 0%). Event Rental: buy at 60% off during rental.',
+    details: 'Buyout eliminates return logistics. Customer invested in item care. Revenue from buyouts is pure margin.',
   },
   {
-    id: 'D5', status: 'decided', title: 'Meta Ads as Primary Channel',
-    description: '40% of budget ($4,000) to Instagram/Facebook. Separate ad sets per model.',
-    details: 'Each model gets its own creative + landing variant. A/B test: which model converts best at lowest CAC?',
+    id: 'D5', status: 'decided', title: 'Both Brands Target US',
+    description: 'rotate (accessible, Rent-to-Own) and ÉDIT (premium, Membership + Event) both in US market.',
+    details: 'No London. ÉDIT repositioned to US premium. Shipping from KZ → any US city costs the same.',
   },
   {
-    id: 'D6', status: 'decided', title: 'Development via Claude',
+    id: 'D6', status: 'decided', title: '$2K Ads, $8K Operations',
+    description: '$2,000 on acquisition (influencers + Meta). $8,000 on shipping, customs, cleaning, packaging, buffer.',
+    details: 'Organic first = $0 CAC for first 5-10 customers. Influencers = $40-80 CAC. Meta only on winners = $100-170 CAC. Blended: $57.',
+  },
+  {
+    id: 'D7', status: 'decided', title: 'Development via Claude',
     description: 'All development through Claude Code. Tech cost < $200 total.',
-    details: 'Next.js on Vercel (free), Stripe for payments. 7 landing page variants from shared components.',
   },
   {
-    id: 'D7', status: 'decided', title: '$10K Bootstrap Budget',
-    description: 'Self-funded. Items already owned ($587K retail). US LLC exists. No external investment for MVP.',
-  },
-  {
-    id: 'D8', status: 'decided', title: 'Saturday Weekly Syncs',
-    description: 'Weekly planning meetings on Saturdays via Claude Code session.',
-    details: 'Review model performance, kill/scale decisions, budget reallocation.',
-  },
-  {
-    id: 'D9', status: 'decided', title: 'US LLC Already Exists',
+    id: 'D8', status: 'decided', title: 'US LLC Already Exists',
     description: 'No need to register new entity. Can operate immediately.',
   },
   {
-    id: 'D10', status: 'pending', title: 'Landing Page Variants per Model',
-    description: 'Each of the 7 models needs a distinct landing page variant or section highlighting that specific model.',
-    details: 'Could be: separate URLs (/rotate/subscription, /rotate/rent-to-own, etc.) or single page with tabs. TBD.',
+    id: 'D9', status: 'decided', title: 'Saturday Weekly Syncs',
+    description: 'Weekly planning on Saturdays via Claude Code. Review model metrics, kill/scale decisions.',
+  },
+  {
+    id: 'D10', status: 'pending', title: 'Pre-position Items in US',
+    description: 'Ship 20-30 popular items bulk to US contact. Enables 2-day domestic delivery for Event Rental.',
+    details: 'Reduces E3 shipping from $40 round-trip to $20. Makes Event Rental viable (no 5-7 day DHL wait).',
   },
   {
     id: 'D11', status: 'pending', title: 'US Returns Address',
-    description: 'Need a US-based address for domestic returns. Options: friend/family, PO box, or returns service.',
-    details: 'First 10 customers: use personal contact in US. Scale: need a returns processing partner.',
+    description: 'Need US-based address for returns. Friend/family for first 10-20 customers.',
   },
   {
     id: 'D12', status: 'pending', title: 'Cleaning Partner (US)',
-    description: 'Items returned to US need cleaning before re-shipping. Need luxury dry cleaner partner.',
-  },
-  {
-    id: 'D13', status: 'exploring', title: 'City-Specific Testing',
-    description: 'Test different models in different cities via Meta Ads geo-targeting.',
-    details: 'Idea: R1 in NYC/LA, R2 in Miami/Austin, E1 in DC, E3 nationwide. Shipping cost identical (all from KZ), so city = ad targeting only.',
+    description: 'Luxury dry cleaner in US for items between rentals.',
   },
 ]

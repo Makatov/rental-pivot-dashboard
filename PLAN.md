@@ -1,230 +1,256 @@
-# Rental Pivot — Master Plan v3
+# Rental Pivot — Master Plan v4
 
 > Last updated: 2026-02-10
-> Status: Planning phase — multi-model testing strategy
-> Saturday meetings: weekly sync + model performance review
+> Status: Planning — content-first, 3 models
 > Development: Claude Code
+> Saturday syncs: weekly via Claude Code session
 
 ---
 
-## Strategy: Test 7 Business Models, Kill Fast, Scale Winners
+## Strategy: Content-First, 3 Models, Kill Fast
 
-Instead of one model in one city — launch **7 different rental/subscription models** across **two brands** in the **US market**. Ship directly from KZ via DHL (-30% discount). Use Meta Ads to drive traffic to each model separately. By Week 12, kill the bottom 2, double down on top 3.
+**Organic Instagram → micro-influencers → Meta Ads (only on winners).**
 
-**Why this works:**
-- Shipping from KZ → any US city costs the same. City = ad targeting, not logistics.
-- Two brands = two positioning experiments (accessible vs premium)
-- 7 models = 7 parallel bets. Only need 1-2 winners.
-- DHL direct eliminates warehouse/3PL overhead entirely.
+3 models instead of 7. Ship from KZ via DHL (-30%). Pre-position popular items in US.
+First 5-10 customers through Instagram DM sales at $0 CAC.
 
----
+### Why this beats v3 (7 models)
 
-## Two Brands, One Market
-
-| Brand | Positioning | Models | Target |
-|-------|------------|--------|--------|
-| **rotate** | Accessible luxury, $49-229 | 3 models (R1, R2, R3) | US women 22-35 |
-| **ÉDIT** | Premium luxury, $29-499 | 4 models (E1, E2, E3, E4) | US women 30-50 |
-
-Both target US. Both use USD. Both ship from KZ.
-ÉDIT repositioned from London to US premium.
+| Problem with 7 models | Fix in v4 |
+|------------------------|-----------|
+| $571/model in ads = no statistical significance | $667/model minimum, but organic gets first 5-10 for free |
+| 7 checkout flows for 1 person = chaos | 3 flows, 2 brands |
+| RTR-clone (R1) = copying a 15-year unprofitable company | Killed. Rent-to-Own has 90% margin vs RTR's ~10% |
+| Try & Buy (R3) = $110 shipping per $49 box | Killed. Economics don't work. |
+| $499/mo Full Wardrobe (E4) = no market for unknown brand | Killed. Start low, earn trust. |
 
 ---
 
-## The 7 Models
+## The 3 Models
 
-### rotate (accessible)
+| Brand | Model | Price | Margin | Why |
+|-------|-------|-------|--------|-----|
+| **rotate** | Rent-to-Own | $79/item/mo | **90%** | No returns, no cleaning, customer owns after 12mo. Simplest ops. |
+| **ÉDIT** | Membership + Rental | $29/mo + $49-99/wk | **46%** | Vivrelle proved this ($62M Series C). Recurring base + variable. |
+| **ÉDIT** | Event Rental | $69-199/item | **74%** | Pre-positioned items, no commitment, widest audience. |
 
-| ID | Model | Price | Margin | How it works |
-|----|-------|-------|--------|--------------|
-| **R1** | Subscription + Swap | $149/mo | 41% | 3 items, 1 swap/mo. Buyout after 12mo at 5%. Classic model. |
-| **R2** | Rent-to-Own | $79/item/mo | 90% | Pay monthly, own after 12 months. No swaps, no returns. Best margin. |
-| **R3** | Try & Buy | $49/box + buy | 26% | 3 items shipped, keep favorites at 40-60% off. Return rest. |
-
-### ÉDIT (premium)
-
-| ID | Model | Price | Margin | How it works |
-|----|-------|-------|--------|--------------|
-| **E1** | Membership + Rental | $29/mo + $49-99/wk | 30% | Low membership fee, pay per rental. Buyout at member discount. |
-| **E2** | Seasonal Capsule | $349/quarter | 35% | 5 items curated by stylist, swap quarterly. Low shipping frequency. |
-| **E3** | Event Rental | $69-199/item | 44% | One-off 5-day rental. No commitment. Widest audience. |
-| **E4** | Full Wardrobe | $499/mo | 57% | 8 items, unlimited swaps, personal stylist. Highest ARPU. |
-
-### Buyout mechanic (core to all):
-- **Subscription models (R1, E2, E4):** After 12 months renting same item → pay 5% to own
-- **Rent-to-Own (R2):** Auto-own after 12 payments, 0% buyout fee
-- **Try & Buy (R3):** Instant buy at 40-60% off retail
-- **Membership (E1):** Buy at 50% off retail anytime
-- **Event Rental (E3):** Buy at 60% off during rental period
+### Buyout mechanics
+- **Rent-to-Own:** Auto-own after 12 payments. Early buyout at 20% off remaining.
+- **Membership:** Buy at 50% off retail anytime during rental.
+- **Event Rental:** Buy at 60% off retail during 5-day rental period.
 
 ---
 
-## DHL-Direct Shipping Model
+## Acquisition Funnel: $0 → $2,000
 
-**No warehouse. No 3PL. Ship item-by-item from KZ.**
+### Phase 1: Organic + DM sales (Weeks 1-4, $0)
 
-| Route | Cost | Notes |
-|-------|------|-------|
-| KZ → US (DHL, -30%) | ~$30/item | Known courier contact with discount |
-| US return (domestic) | ~$10/item | Returns to US-based contact |
-| Round-trip per swap | ~$40 | Cheaper than hub model at <50 subs |
-
-**Returns flow (Phase 1, first 10-20 customers):**
-- Returns go to personal US contact (friend/family)
-- Cleaning by local US partner before re-shipping
-- Scale: switch to returns processing service
-
-**Why DHL-direct beats hub model at low volume:**
 ```
-Hub model: $1,200 bulk ship + $800 3PL/mo + $10/delivery = ~$3,200 for 6 months
-DHL-direct: $30/item as needed, $0 warehouse = pay only for what ships
+3 posts/day × 30 days = 90 posts
+Each of 2,347 inventory items = content
+→ 5-10 customers via Instagram DMs
+→ CAC: $0
 ```
-At <50 subscribers, DHL-direct is cheaper. At 50+, evaluate hub.
+
+Content that goes viral in fashion rental:
+- "I rented a $3,000 Gucci bag for $79/month"
+- "My luxury closet costs less than Netflix"
+- Unboxing reels, GRWM, styling tips
+- Price reveal format (shows retail vs rental price)
+
+### Phase 2: Micro-influencers (Weeks 3-8, $800)
+
+```
+10 influencers × $80 avg (free rental or cash)
+Combined reach: 150K-500K
+→ 10-20 customers
+→ CAC: $40-80
+```
+
+Fact: 12 micro-influencers give 340% more engagement + 2.8x conversion vs 2 macro.
+
+### Phase 3: Meta Ads on winners (Weeks 7-12, $1,200)
+
+```
+Only boost posts/models that already convert organically
+UGC from Phase 1-2 as ad creative
+$400/week for 3 weeks on best model
+→ 7-12 customers
+→ CAC: $100-170
+```
+
+### Total: 25-42 customers on $2,000 ads. Blended CAC: $48-80.
+
+---
+
+## Unit Economics
+
+| Model | Revenue | Variable | Contribution | Margin | LTV | LTV:CAC |
+|-------|---------|----------|-------------|--------|-----|---------|
+| Rent-to-Own | $79/mo | $7.50 | $71.50 | 90% | $858 (12mo) | 17:1 |
+| Membership | $140/mo | $76 | $64 | 46% | $384 (6mo) | 5:1 |
+| Event Rental | $134/rental | $35 | $99 | 74% | $414 (6mo) | 6:1 |
+| **Blended** | **$118/mo** | **$40** | **$78** | **66%** | **$612** | **11:1** |
+
+### Why Rent-to-Own is the star
+
+| Metric | Rent-to-Own | vs RTR (industry) |
+|--------|-------------|-------------------|
+| Margin | 90% | ~10% |
+| Returns | None | Every swap |
+| Cleaning | None | Every return |
+| Shipping/mo | $2.50 (amortized) | $12+ per swap |
+| Customer care | High (they'll own it) | Low (it's a rental) |
+| Lock-in | 12 months natural | Monthly churn |
 
 ---
 
 ## Budget ($10K)
 
-| Category | Amount | % |
-|----------|--------|---|
-| Meta Ads | $4,000 | 40% |
-| DHL Shipping | $1,500 | 15% |
-| Customs & Duties | $800 | 8% |
-| Content & Photo | $600 | 6% |
-| Cleaning (US-side) | $400 | 4% |
-| Branded Packaging | $400 | 4% |
-| Insurance | $400 | 4% |
-| Returns Handling | $300 | 3% |
-| Tech & Tools | $200 | 2% |
-| Buffer | $400 | 4% |
+| Category | Amount | % | Notes |
+|----------|--------|---|-------|
+| DHL Shipping | $2,500 | 25% | ~80 shipments × $30 |
+| Customs & Duties | $1,200 | 12% | Pre-owned luxury, lower duty |
+| Meta Ads | $1,200 | 12% | Only on proven winners |
+| Micro-influencers | $800 | 8% | 10 influencers |
+| Cleaning (US) | $600 | 6% | Membership + Event returns |
+| Content & Photo | $500 | 5% | Product photography |
+| Pre-position inventory | $500 | 5% | 20-30 items to US contact |
+| Branded Packaging | $400 | 4% | Unboxing experience |
+| Insurance | $400 | 4% | DHL + damage coverage |
+| Returns Handling | $400 | 4% | US domestic returns |
+| Tech & Tools | $200 | 2% | Claude API, domains, email |
+| Buffer | $300 | 3% | Unexpected costs |
 
-### Meta Ads split across models
-$4,000 / 7 models / 4 launch weeks = **~$140/model/week**
-
-After Week 12 kill: $4,000 remaining / 3-5 models = **$200-270/model/week**
+**$2,000 on acquisition. $8,000 on operations.**
 
 ---
 
-## Unit Economics (Blended)
+## DHL-Direct Shipping
 
-| Metric | rotate | ÉDIT | Blended |
-|--------|--------|------|---------|
-| Avg ARPU | $132 | $232 | $173 |
-| Variable cost | $73 | $123 | $93 |
-| Contribution | $59 | $109 | $80 |
-| Margin | 45% | 47% | 46% |
-| CAC target | $80 | $100 | $88 |
-| LTV (6mo) | $354 | $654 | $480 |
-| LTV:CAC | 4:1 | 7:1 | 5:1 |
+| Route | Cost | Used by |
+|-------|------|---------|
+| KZ → US (DHL -30%) | ~$30/item | All models (initial ship) |
+| US return (domestic) | ~$10/item | Membership + Event only |
+| Pre-positioned (domestic) | ~$10 each way | Event Rental |
 
-**Break-even: ~15 subscribers combined (Week 10)**
+**Rent-to-Own: ONE shipment, then done.** No returns. No cleaning. No re-shipping.
+
+Pre-position 20-30 popular items at US contact → enables 2-day delivery for Event Rental.
 
 ---
 
 ## 16-Week Timeline
 
-### Phase 1: Preparation (Weeks 1-4)
-- Finalize 7 model specs and pricing
-- DHL account setup, test shipment (20 items)
-- Product photography, domains, Instagram for both brands
-- 7 landing page variants
-- Start waitlist Meta Ads ($200)
-- **Milestone W4:** DHL tested, 100+ waitlist
+### Phase 1: Content + Organic (Weeks 1-4)
+- Instagram accounts, daily posting (3/day), first DM sales
+- DHL setup, test shipment, pre-position 20-30 items in US
+- Product photography batch, Stripe payment links
+- **W4 milestone: 5-10 organic customers, $0 CAC**
 
-### Phase 2: Build & Test (Weeks 5-8)
-- 7 checkout flows (Stripe)
-- Beta test each model (2-3 users per model)
-- Full rental cycle test per model
-- Ad creatives for each model
-- **Milestone W8:** 200+ waitlist, all 7 flows ready
+### Phase 2: Influencers + Build (Weeks 5-8)
+- 10 micro-influencers receive items, post content
+- Build 3 checkout flows on site
+- First customer UGC, reviews, testimonials
+- **W8 milestone: 20+ customers, model comparison data**
 
-### Phase 3: Launch 7 Models (Weeks 9-12)
-- Launch all simultaneously
-- Meta Ads: separate ad set per model ($80/model/week)
-- Daily monitoring: orders, shipping times, issues
-- Week 12: CHECKPOINT — kill bottom 2, reallocate budget
-- **Milestone W12:** 25+ customers, kill/scale decision
+### Phase 3: Launch + Meta Ads (Weeks 9-12)
+- Meta Ads: boost best organic posts, UGC as creative
+- $400/week on best-performing model
+- Kill weakest model if needed, reallocate
+- **W12 milestone: 38+ customers, winner identified**
 
-### Phase 4: Kill / Scale (Weeks 13-16)
-- Double down on top 3 models
-- Scale Meta spend for winners
-- Ship more inventory for winning categories
-- Full financial review per model
-- **Milestone W16:** Top 1-2 models identified → 6-month scale plan
+### Phase 4: Scale Winner (Weeks 13-16)
+- All budget → winning model + channel
+- Scale influencer program (proven ROI)
+- Test TikTok organic
+- Explore P2P hybrid (let customers list their items)
+- **W16 milestone: 55+ customers, $5.8K MRR**
 
 ---
 
-## GO / NO-GO Criteria (Week 12)
+## Cashflow Projection
+
+| Period | Customers | MRR | Costs | Net | Cumulative |
+|--------|-----------|-----|-------|-----|------------|
+| W1-4 (Organic) | 5 | $475 | $550 | -$75 | -$75 |
+| W5-8 (+Influencers) | 15 | $1,475 | $1,350 | +$125 | +$50 |
+| W9-12 (+Meta) | 28 | $2,800 | $2,100 | +$700 | +$750 |
+| W13-16 (Scale) | 38 | $3,900 | $2,700 | +$1,200 | +$1,950 |
+| Month 5 | 48 | $5,000 | $3,300 | +$1,700 | +$3,650 |
+| Month 6 | 55 | $5,800 | $3,700 | +$2,100 | +$5,750 |
+
+**Break-even: Week 6, ~11 subscribers.**
+**$10K investment recovered: ~Month 5.**
+
+---
+
+## GO / NO-GO (Week 12)
 
 ### Per model — SCALE
-- 5+ customers on that model
-- Contribution margin > 30%
-- CAC < $100 via Meta
-- At least 1 repeat/retained customer
+- 10+ customers
+- Contribution margin > 40%
+- Repeating/retained customers
 
 ### Per model — KILL
-- < 2 customers after 3 weeks of ads
-- CAC > $200
-- Negative contribution margin
-- Zero retention signal
+- < 5 customers after 8 weeks
+- CAC > $200 via Meta
+- Zero retention
 
 ### Overall — CONTINUE
-- 15+ total customers across all models
-- At least 2 models meeting SCALE criteria
-- Cash position allows 4+ more weeks
+- 25+ total customers
+- At least 1 model clearly winning
+- Net positive monthly cashflow
 
 ### Overall — PAUSE
-- < 10 customers total
-- No model meeting SCALE criteria
-- Budget depleted with no path to break-even
+- < 15 customers
+- All models negative unit economics
+- Content getting zero engagement
 
 ---
 
-## Key Risks
+## Competitor Intelligence
 
-| # | Risk | Severity | Mitigation |
-|---|------|----------|------------|
-| 1 | Meta CAC > $150 | CRITICAL | 7 models = 7 chances. Kill non-converting fast. |
-| 2 | DHL shipping time 5-7 days | CRITICAL | Pre-ship popular items. Event Rental needs 10-day lead. |
-| 3 | $4K ads across 7 = too thin | HIGH | $80/model/week → aggressive kill at Week 12. |
-| 4 | Returns logistics in US | HIGH | Friend/family first, scale to service later. |
-| 5 | Operational complexity | MEDIUM | Shared backend, kill models to simplify. |
+| Competitor | What we learned |
+|------------|-----------------|
+| **Rent the Runway** | 15 years, $300M revenue, STILL not profitable. Logistics eat everything. Don't copy this. |
+| **Nuuly** | Profitable because 45% inventory at cost from parent co. 90% Year 1 retention (best). Simple = better (1 plan). |
+| **Vivrelle** | Luxury accessories membership, profitable early, $62M Series C. Our closest analog. Blueprint. |
+| **CaaStle** | $520M raised, $510M lost, CEO arrested for fraud. Unit economics don't lie. |
+| **By Rotation** | P2P model, 500K community, 30% commission. Our Phase 2 evolution. |
+
+**Key insight:** Luxury niche > mass market. Vivrelle > RTR in profitability.
+**Our edge:** 2,347 items of European luxury already owned. $0 COGS.
 
 ---
 
-## What's Already Done
+## Growth Hacking Levers (ranked)
+
+1. **Content as acquisition** — each item = Instagram/TikTok content ($0)
+2. **Micro-influencers** — 340% more engagement than macro, $40-80 CAC
+3. **DM sales** — zero-friction, zero-CAC first customers
+4. **Scarcity** — "Only 47 Burberry items available"
+5. **Referral** — "Give friend 50% off first month, get 50% off"
+6. **UGC as ads** — customer unboxing videos as Meta Ad creative
+7. **P2P hybrid (Phase 2)** — let customers list their own luxury items, 15-30% commission
+
+---
+
+## What's Done
 
 - [x] US LLC exists
 - [x] Inventory analyzed (2,347 items, $587K retail)
-- [x] Both brands defined (rotate + ÉDIT)
-- [x] 7 business models designed with unit economics
+- [x] Both brands defined (rotate + ÉDIT, both US)
+- [x] 3 business models designed with unit economics
 - [x] Demo landing pages built (Vercel)
 - [x] Dashboard with model comparison, projections, risks
 - [x] DHL contact identified (-30% discount)
-- [ ] DHL account setup
-- [ ] Domains purchased (rotate + ÉDIT)
 - [ ] Instagram accounts created
-- [ ] Test shipment sent
-- [ ] Stripe configured (7 products)
-- [ ] 7 landing page variants built
-- [ ] Waitlist live
-- [ ] US returns address confirmed
-- [ ] Cleaning partner (US)
-
----
-
-## Context Notes
-
-**Repo:** `rental-pivot-dashboard`
-**URL:** https://rental-pivot-dashboard.vercel.app
-**Key data file:** `src/data/business-models.ts` — all 7 models with economics
-**Dashboard:** `/dashboard` — includes Model Comparison section
-**Demos:** `/demo/rotate` and `/demo/edit`
-
-### Quick commands
-```bash
-cd ~/Desktop/work/rental-pivot-dashboard
-pnpm dev          # localhost:3000
-pnpm build        # check errors
-git push          # auto-deploy to Vercel
-```
+- [ ] DHL account setup
+- [ ] Domains purchased
+- [ ] First content posted
+- [ ] First DM sale
+- [ ] Pre-position items to US contact
+- [ ] Stripe payment links
+- [ ] Micro-influencers identified
+- [ ] Checkout flows built

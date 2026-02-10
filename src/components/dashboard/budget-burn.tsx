@@ -66,7 +66,7 @@ export function BudgetBurn() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Combined target (7 models)</span>
+              <span className="text-gray-500">Break-even target (3 models)</span>
               <span className="font-bold">{breakEven.combined.subscribers} subscribers</span>
             </div>
             <div className="flex justify-between text-sm">
@@ -83,11 +83,11 @@ export function BudgetBurn() {
                 <span className="font-semibold">${breakEven.combined.fixedCosts.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>rotate (3 models)</span>
-                <span className="font-semibold">{breakEven.rotate.subscribers} subs</span>
+                <span>rotate — Rent-to-Own</span>
+                <span className="font-semibold">{breakEven.rotate.subscribers} subs (90% margin)</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>ÉDIT (4 models)</span>
+                <span>ÉDIT — Membership + Event</span>
                 <span className="font-semibold">{breakEven.edit.subscribers} subs</span>
               </div>
             </div>
