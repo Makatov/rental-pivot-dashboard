@@ -22,7 +22,7 @@ export function ModelComparison() {
   return (
     <section className="space-y-3">
       <div className="flex items-baseline gap-2">
-        <h2 className="text-base font-bold">7 Models to Test</h2>
+        <h2 className="text-base font-bold">{modelSummary.totalModels} Models to Test</h2>
         <span className="text-xs text-gray-400">margins {modelSummary.marginRange}</span>
       </div>
 
