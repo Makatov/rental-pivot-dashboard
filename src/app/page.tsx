@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BarChart3, Sparkles, Package, DollarSign, Target } from 'lucide-react'
+import { BarChart3, Sparkles, Package, DollarSign, Target, ClipboardList } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -21,6 +21,20 @@ export default function Home() {
               <div>
                 <h2 className="text-sm font-bold">Team Dashboard</h2>
                 <p className="text-xs text-gray-500">Statuses, metrics, timeline, financials</p>
+              </div>
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/tasks" className="block">
+          <div className="rounded-xl bg-white border shadow-sm p-4 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                <ClipboardList className="h-5 w-5 text-amber-600" />
+              </div>
+              <div>
+                <h2 className="text-sm font-bold">Tasks</h2>
+                <p className="text-xs text-gray-500">Brand, US infra, Stripe, marketing, product</p>
               </div>
             </div>
           </div>

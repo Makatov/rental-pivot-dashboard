@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ClipboardList } from 'lucide-react'
 import { StatusOverview } from '@/components/dashboard/status-overview'
 import { DecisionsBoard } from '@/components/dashboard/decisions-board'
 import { ModelComparison } from '@/components/dashboard/model-comparison'
@@ -31,6 +31,9 @@ export default function DashboardPage() {
             <ArrowLeft className="h-4 w-4" />
           </Link>
           <h1 className="text-sm font-bold">Team Dashboard</h1>
+          <Link href="/tasks" className="ml-auto p-1 rounded-lg hover:bg-gray-100">
+            <ClipboardList className="h-4 w-4 text-gray-500" />
+          </Link>
         </div>
       </div>
 
