@@ -12,7 +12,7 @@ import { editTestimonials } from '@/data/testimonials'
 import { editHeroImage } from '@/data/brand-images'
 
 const editItems = demoCatalog.filter(item =>
-  ['Dior', 'Louis Vuitton', 'Brunello Cucinelli', 'Prada', 'Christian Louboutin', 'Fendi'].includes(item.brand)
+  ['Dior', 'Brunello Cucinelli', 'Prada', 'Christian Louboutin', 'Fendi'].includes(item.brand)
 )
 
 export default function EditDemoPage() {
