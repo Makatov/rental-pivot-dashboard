@@ -48,9 +48,9 @@ export interface BudgetItem {
 export interface MonthProjection {
   month: number
   label: string
-  r2: number
-  e1: number
-  e3: number
+  ro1: number
+  ed1: number
+  ed2: number
   revenue: number
   costs: number
   net: number

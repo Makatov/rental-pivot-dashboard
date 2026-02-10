@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { projections, cumulativeChartData, unitEconomics } from '@/data/financials'
+import { projections, cumulativeChartData, unitEconomics, modelEconomics, getCac } from '@/data/financials'
 import type { ScenarioKey } from '@/types'
 
 const LineChart = dynamic(() => import('recharts').then(m => m.LineChart), { ssr: false })
@@ -30,9 +30,9 @@ export function FinancialProjections() {
 
   const revenueByModel = data.map((m) => ({
     month: `M${m.month}`,
-    R2: m.r2 * 119,
-    E1: m.e1 * 140,
-    E3: m.e3 * 134,
+    RO1: m.ro1 * modelEconomics.ro1.arpu,
+    ED1: m.ed1 * modelEconomics.ed1.arpu,
+    ED2: m.ed2 * modelEconomics.ed2.arpu,
   }))
 
   return (
@@ -118,9 +118,9 @@ export function FinancialProjections() {
                 <YAxis tick={{ fontSize: 11 }} tickFormatter={(v) => `$${(v/1000).toFixed(1)}K`} />
                 <Tooltip formatter={(value) => `$${Number(value).toLocaleString()}`} />
                 <Legend wrapperStyle={{ fontSize: 11 }} />
-                <Bar dataKey="R2" stackId="revenue" fill="#10b981" name="R2 rotate" />
-                <Bar dataKey="E1" stackId="revenue" fill="#f59e0b" name="E1 membership" />
-                <Bar dataKey="E3" stackId="revenue" fill="#8b5cf6" name="E3 event" />
+                <Bar dataKey="RO1" stackId="revenue" fill="#10b981" name="RO1 rotate" />
+                <Bar dataKey="ED1" stackId="revenue" fill="#f59e0b" name="ED1 membership" />
+                <Bar dataKey="ED2" stackId="revenue" fill="#8b5cf6" name="ED2 event" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -138,11 +138,12 @@ export function FinancialProjections() {
               <thead>
                 <tr className="border-b text-gray-500">
                   <th className="text-left py-1 pr-2">Mo</th>
-                  <th className="text-center px-1">R2</th>
-                  <th className="text-center px-1">E1</th>
-                  <th className="text-center px-1">E3</th>
+                  <th className="text-center px-1">RO1</th>
+                  <th className="text-center px-1">ED1</th>
+                  <th className="text-center px-1">ED2</th>
                   <th className="text-right px-1">Revenue</th>
                   <th className="text-right px-1">Costs</th>
+                  <th className="text-right px-1 text-amber-600">CAC</th>
                   <th className="text-right px-1">Net</th>
                   <th className="text-right pl-1">Cum.</th>
                 </tr>
@@ -151,11 +152,12 @@ export function FinancialProjections() {
                 {data.map((m) => (
                   <tr key={m.month} className="border-b border-gray-50">
                     <td className="py-1 pr-2 text-gray-500">{m.month}</td>
-                    <td className="text-center px-1">{m.r2}</td>
-                    <td className="text-center px-1">{m.e1}</td>
-                    <td className="text-center px-1">{m.e3}</td>
+                    <td className="text-center px-1">{m.ro1}</td>
+                    <td className="text-center px-1">{m.ed1}</td>
+                    <td className="text-center px-1">{m.ed2}</td>
                     <td className="text-right px-1">${m.revenue.toLocaleString()}</td>
                     <td className="text-right px-1 text-gray-500">${m.costs.toLocaleString()}</td>
+                    <td className="text-right px-1 text-amber-600">${getCac(m).toLocaleString()}</td>
                     <td className={`text-right px-1 font-medium ${m.net >= 0 ? 'text-emerald-600' : 'text-red-500'}`}>
                       {m.net >= 0 ? '+' : ''}${m.net.toLocaleString()}
                     </td>
@@ -167,17 +169,18 @@ export function FinancialProjections() {
               </tbody>
             </table>
           </div>
+          <p className="text-[10px] text-gray-400 mt-2">Costs = variable (per-sub) + CAC (marketing) + fixed $500/mo</p>
         </CardContent>
       </Card>
 
-      {/* Unit Economics */}
+      {/* Unit Economics — 4 models */}
       <Card>
         <CardHeader>
           <CardTitle className="text-sm">Unit Economics</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-3 text-center">
-            {(['rotate', 'edit', 'blended'] as const).map((key) => {
+          <div className="grid grid-cols-4 gap-2 text-center">
+            {(['ro1', 'ed1', 'ed2', 'blended'] as const).map((key) => {
               const ue = unitEconomics[key]
               return (
                 <div key={key} className="space-y-1">
@@ -186,8 +189,8 @@ export function FinancialProjections() {
                   <p className="text-[10px] text-gray-400">ARPU</p>
                   <p className="text-sm font-semibold text-emerald-600">{ue.marginPercent}%</p>
                   <p className="text-[10px] text-gray-400">Margin</p>
-                  <p className="text-sm font-semibold">{ue.ltvCacRatio}</p>
-                  <p className="text-[10px] text-gray-400">LTV:CAC</p>
+                  <p className="text-xs text-amber-600">${ue.cac}</p>
+                  <p className="text-[10px] text-gray-400">CAC</p>
                 </div>
               )
             })}

@@ -100,16 +100,16 @@ export function BudgetBurn() {
             <div className="border-t pt-3 space-y-2">
               <p className="text-xs font-medium text-gray-500 uppercase">Contribution per model</p>
               <div className="flex justify-between text-xs">
-                <span>R2 rotate — $119 ARPU</span>
-                <span className="font-semibold">${breakEven.perModel.r2.contributionMargin}/sub</span>
+                <span>RO1 rotate — $119 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.ro1.contributionMargin}/sub</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>E1 membership — $140 ARPU</span>
-                <span className="font-semibold">${breakEven.perModel.e1.contributionMargin}/sub</span>
+                <span>ED1 membership — $140 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.ed1.contributionMargin}/sub</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>E3 event — $134 ARPU</span>
-                <span className="font-semibold">${breakEven.perModel.e3.contributionMargin}/rental</span>
+                <span>ED2 event — $134 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.ed2.contributionMargin}/rental</span>
               </div>
             </div>
           </CardContent>
