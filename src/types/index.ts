@@ -135,6 +135,7 @@ export interface BusinessModel {
     swaps: string
     buyout: string
     commitment: string
+    securityDeposit: string
   }
   economics: {
     revenuePerCustomer: number

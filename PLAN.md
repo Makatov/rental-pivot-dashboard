@@ -30,9 +30,9 @@ First 5-10 customers through Instagram DM sales at $0 CAC.
 
 | Brand | Model | Price | Margin | Why |
 |-------|-------|-------|--------|-----|
-| **rotate** | Rent-to-Own | $79/item/mo | **90%** | No returns, no cleaning, customer owns after 12mo. Simplest ops. |
-| **ÉDIT** | Membership + Rental | $29/mo + $49-99/wk | **46%** | Vivrelle proved this ($62M Series C). Recurring base + variable. |
-| **ÉDIT** | Event Rental | $69-199/item | **74%** | Pre-positioned items, no commitment, widest audience. |
+| **rotate** | Rent-to-Own | $79/item/mo | **87%** | No returns, no cleaning, customer owns after 12mo. Simplest ops. |
+| **ÉDIT** | Membership + Rental | $29/mo + $49-99/wk | **43%** | Vivrelle proved this ($62M Series C). Recurring base + variable. |
+| **ÉDIT** | Event Rental | $69-199/item | **71%** | Pre-positioned items, no commitment, widest audience. |
 
 ### Buyout mechanics
 - **Rent-to-Own:** Auto-own after 12 payments. Early buyout at 20% off remaining.
@@ -83,20 +83,22 @@ $400/week for 3 weeks on best model
 
 ---
 
-## Unit Economics
+## Unit Economics (incl. Stripe 2.9% + $0.30)
 
 | Model | Revenue | Variable | Contribution | Margin | LTV | LTV:CAC |
 |-------|---------|----------|-------------|--------|-----|---------|
-| Rent-to-Own | $79/mo | $7.50 | $71.50 | 90% | $858 (12mo) | 17:1 |
-| Membership | $140/mo | $76 | $64 | 46% | $384 (6mo) | 5:1 |
-| Event Rental | $134/rental | $35 | $99 | 74% | $414 (6mo) | 6:1 |
-| **Blended** | **$118/mo** | **$40** | **$78** | **66%** | **$612** | **11:1** |
+| Rent-to-Own | $79/mo | $10 | $69 | 87% | $828 (12mo) | 17:1 |
+| Membership | $140/mo | $80 | $60 | 43% | $360 (6mo) | 5:1 |
+| Event Rental | $134/rental | $39 | $95 | 71% | $396 (6mo) | 6:1 |
+| **Blended** | **$118/mo** | **$43.50** | **$74.50** | **63%** | **$585** | **10:1** |
+
+Variable costs include: shipping, cleaning, damage reserve, Stripe fees.
 
 ### Why Rent-to-Own is the star
 
 | Metric | Rent-to-Own | vs RTR (industry) |
 |--------|-------------|-------------------|
-| Margin | 90% | ~10% |
+| Margin | 87% | ~10% |
 | Returns | None | Every swap |
 | Cleaning | None | Every return |
 | Shipping/mo | $2.50 (amortized) | $12+ per swap |
@@ -110,17 +112,17 @@ $400/week for 3 weeks on best model
 | Category | Amount | % | Notes |
 |----------|--------|---|-------|
 | DHL Shipping | $2,500 | 25% | ~80 shipments × $30 |
-| Customs & Duties | $1,200 | 12% | Pre-owned luxury, lower duty |
+| Customs & Duties | $1,800 | 18% | Luxury items attract higher duties even pre-owned |
 | Meta Ads | $1,200 | 12% | Only on proven winners |
 | Micro-influencers | $800 | 8% | 10 influencers |
 | Cleaning (US) | $600 | 6% | Membership + Event returns |
 | Content & Photo | $500 | 5% | Product photography |
 | Pre-position inventory | $500 | 5% | 20-30 items to US contact |
-| Branded Packaging | $400 | 4% | Unboxing experience |
 | Insurance | $400 | 4% | DHL + damage coverage |
 | Returns Handling | $400 | 4% | US domestic returns |
+| Branded Packaging | $400 | 4% | Unboxing experience |
 | Tech & Tools | $200 | 2% | Claude API, domains, email |
-| Buffer | $300 | 3% | Unexpected costs |
+| Buffer | $700 | 7% | Unexpected costs |
 
 **$2,000 on acquisition. $8,000 on operations.**
 
@@ -137,6 +139,112 @@ $400/week for 3 weeks on best model
 **Rent-to-Own: ONE shipment, then done.** No returns. No cleaning. No re-shipping.
 
 Pre-position 20-30 popular items at US contact → enables 2-day delivery for Event Rental.
+
+---
+
+## How It Actually Works (Customer Journeys)
+
+### Rent-to-Own (rotate) — Step by Step
+
+1. **Discovery**: Customer finds us on Instagram (organic post, influencer, or ad)
+2. **Browse**: DM conversation or website → picks 1-3 items
+3. **Checkout**: Stripe payment link. $79/item/month + **$200 refundable security deposit** per item (auth hold, not a charge)
+4. **Shipping**: Item ships from KZ via DHL. 5-7 business days. Tracking shared via DM/email
+5. **Wear**: Customer keeps and wears the item. No returns, no swaps
+6. **Monthly billing**: Stripe charges $79/item automatically on the same date each month
+7. **After 12 months**: Item is theirs. No final payment, no buyout fee. Deposit released
+8. **Early buyout option**: Anytime — pay remaining balance minus 20%. Deposit returned
+9. **Cancellation**: Can cancel anytime. Return item at customer's expense. Deposit refunded minus any damage. Prior payments forfeited (no equity built)
+
+**Who does what:**
+- **Us**: Post content, answer DMs, send Stripe link, ship via DHL, track delivery
+- **Customer**: Pay monthly, keep item, report issues
+- **Stripe**: Recurring billing, deposit hold, payment retries
+- **DHL**: One shipment KZ→US, tracking
+
+### Membership + Rental (ÉDIT) — Step by Step
+
+1. **Discovery**: Instagram, influencer, or referral
+2. **Join**: $29/month membership via Stripe + **$200 refundable security deposit** (auth hold)
+3. **Browse**: Access to full luxury catalog at member pricing
+4. **Rent**: Pick item → pay $49-99/week per item via Stripe
+5. **Shipping**: DHL from KZ (5-7 days) or from US contact (2-3 days if pre-positioned)
+6. **Wear**: 1-4 weeks typical rental period
+7. **Return or Buy**: Return via prepaid label ($10 domestic) OR buy at 50% off retail
+8. **Repeat**: Rent another item. Membership keeps catalog access active
+9. **Cancel membership**: Return all items within 7 days. Deposit refunded minus damage
+
+**Who does what:**
+- **Us**: Manage catalog, DMs, ship/receive items, quality check returns, send to cleaning
+- **Customer**: Pay membership + per-rental, return on time, report damage
+- **US contact**: Receive returns, forward to cleaning, re-ship pre-positioned items
+- **Cleaner**: Professional cleaning between rentals ($15-23/item)
+
+### Event Rental (ÉDIT) — Step by Step
+
+1. **Discovery**: Instagram content ("What to wear to [event]"), Google, referral
+2. **Browse**: Website or DM → pick 1-3 items for specific event date
+3. **Book**: Pay $69-199/item for 5-day rental + **$200 refundable security deposit** (auth hold)
+4. **Shipping**: Pre-positioned item ships from US contact (2-3 days). If not pre-positioned, DHL from KZ (book 10+ days ahead)
+5. **Event**: Customer wears item for 5 days
+6. **Return or Buy**: Return via prepaid label within 5 days OR buy at 60% off retail
+7. **Done**: One-off transaction. Deposit refunded 5-7 days after item inspection
+
+**Who does what:**
+- **Us**: Manage bookings, coordinate availability, ship or arrange domestic shipping
+- **Customer**: Book ahead, wear, return on time
+- **US contact**: Ship pre-positioned items, receive returns, send to cleaning
+- **Cleaner**: Clean item for next rental
+
+---
+
+## Security Deposit & Policies
+
+### Security Deposit
+- **$200 authorization hold** on credit card (Stripe auth, NOT a charge — customer sees it as "pending")
+- Released within 5-7 business days after item return and inspection
+- Deducted for: unrepairable damage, lost item, late return (>3 days)
+- Rent-to-Own: deposit released after 12 months when customer takes ownership
+
+### Damage & Loss
+- **Minor wear**: No charge (expected with normal use of luxury items)
+- **Repairable damage**: Customer charged actual repair cost (deducted from deposit)
+- **Unrepairable/Lost**: Customer charged up to retail value minus total payments already made
+- **Transit damage**: DHL shipping insurance covers damage in transit (included in Insurance budget)
+
+### Late Returns
+- **1-3 days late**: Friendly reminder, no charge
+- **4-7 days late**: $25/day late fee
+- **7+ days late**: Treated as purchase at full rental-to-own price
+
+### Cancellation
+- **Rent-to-Own**: Cancel anytime. Return item. Forfeit prior payments (no ownership equity). Deposit returned
+- **Membership**: Cancel anytime. Return all items within 7 days. Deposit returned
+- **Event Rental**: Cancel 48+ hours before ship → full refund. <48 hours → 50% refund. After delivery → no refund
+
+### Non-Payment
+- Stripe handles automatic retries (3 attempts over 7 days)
+- After failed retries: subscription paused, customer notified via email
+- After 14 days: subscription cancelled, item treated as unreturned, deposit forfeited
+
+---
+
+## Inventory Tracking
+
+- **Google Sheet** for MVP (< 50 items in circulation)
+- Columns: SKU ID, Item Name, Brand, Status (Available / Rented / In Transit / Pre-positioned / Sold), Customer Name, Ship Date, Expected Return, Location (KZ / US Contact / Customer)
+- **Pre-positioned items** (20-30): separate tab with US contact, tracked by item
+- **Weekly reconciliation**: check sheet vs. actual items with US contact every Monday
+- **Phase 2** (50+ items): migrate to Airtable or simple DB
+
+---
+
+## Legal Requirements (Before First Customer)
+
+- [ ] **Terms of Service**: Rental agreement, damage liability, cancellation, dispute resolution
+- [ ] **Privacy Policy**: Required for website and Stripe checkout
+- [ ] **Rental Agreement template**: Auto-sent via email on every checkout
+- [ ] **State regulations check**: Verify if rental/subscription requires specific licensing
 
 ---
 
@@ -245,12 +353,20 @@ Pre-position 20-30 popular items at US contact → enables 2-day delivery for Ev
 - [x] Demo landing pages built (Vercel)
 - [x] Dashboard with model comparison, projections, risks
 - [x] DHL contact identified (-30% discount)
+- [x] Customer journeys documented (all 3 models step-by-step)
+- [x] Security deposit & policies defined ($200 auth hold)
+- [x] Damage, late return, cancellation policies set
+- [x] Inventory tracking plan (Google Sheet MVP)
+- [ ] Terms of Service drafted
+- [ ] Privacy Policy drafted
+- [ ] Rental Agreement template created
 - [ ] Instagram accounts created
 - [ ] DHL account setup
 - [ ] Domains purchased
 - [ ] First content posted
 - [ ] First DM sale
 - [ ] Pre-position items to US contact
-- [ ] Stripe payment links
+- [ ] Stripe payment links configured ($200 auth hold)
 - [ ] Micro-influencers identified
 - [ ] Checkout flows built
+- [ ] Google Sheet inventory tracker set up

@@ -3,6 +3,7 @@ import { BusinessModel } from '@/types'
 // v4 — 3 models only, content-first, DHL-direct
 // Shipping: KZ→US $30 (DHL -30%), US return $10 domestic
 // Acquisition: organic → influencers → Meta (in that order)
+// Stripe: 2.9% + $0.30 per transaction included in otherVariable
 
 export const businessModels: BusinessModel[] = [
   {
@@ -21,16 +22,17 @@ export const businessModels: BusinessModel[] = [
       swaps: 'None — item stays with you',
       buyout: 'Automatic after 12 payments. Early buyout = remaining balance -20%.',
       commitment: '12-month plan per item, cancel anytime (forfeit payments)',
+      securityDeposit: '$200 hold per item (Stripe auth, released after ownership or return)',
     },
     economics: {
       revenuePerCustomer: 79,
       shippingPerMonth: 2.5,   // $30 initial / 12 months
-      otherVariable: 5,        // damage reserve only
-      contributionMargin: 71.5,
-      marginPercent: 90,
+      otherVariable: 7.5,      // damage reserve $5 + Stripe ~$2.50
+      contributionMargin: 69,
+      marginPercent: 87,
     },
     testSegment: 'US nationwide — aspirational luxury buyers 22-35',
-    keyAdvantage: 'Best margins (90%). No return logistics. Customer invested in item care. Simplest operations.',
+    keyAdvantage: 'Best margins (87%). No return logistics. Customer invested in item care. Simplest operations.',
     keyRisk: 'Low ARPU per item. Need 2+ items/customer for strong revenue. 12-month lock-up of inventory.',
   },
 
@@ -50,13 +52,14 @@ export const businessModels: BusinessModel[] = [
       swaps: 'Rent as many as you want, 1 at a time or stack',
       buyout: 'Member price = 50% off retail, anytime during rental',
       commitment: 'Monthly membership, rentals per-use',
+      securityDeposit: '$200 hold (Stripe auth, released 5-7 days after item return)',
     },
     economics: {
       revenuePerCustomer: 140,  // $29 membership + avg 1.5 rentals at $74
       shippingPerMonth: 45,     // 1.5 rentals: 1.5×$30 KZ→US
-      otherVariable: 31,        // cleaning $23 + damage $8
-      contributionMargin: 64,
-      marginPercent: 46,
+      otherVariable: 35,        // cleaning $23 + damage $8 + Stripe ~$4
+      contributionMargin: 60,
+      marginPercent: 43,
     },
     testSegment: 'US nationwide — event-heavy professionals & fashion lovers 28-45',
     keyAdvantage: 'Recurring base ($29) + variable upside. Low commitment = easy acquisition. Vivrelle proved this at $62M Series C.',
@@ -79,16 +82,17 @@ export const businessModels: BusinessModel[] = [
       swaps: 'N/A — per-occasion',
       buyout: '60% off retail during rental period',
       commitment: 'None — pay per rental',
+      securityDeposit: '$200 hold per item (Stripe auth, released 5-7 days after return)',
     },
     economics: {
       revenuePerCustomer: 134,
       shippingPerMonth: 10,     // pre-positioned items: $10 domestic round-trip
-      otherVariable: 25,        // cleaning $15 + depreciation $5 + damage $5
-      contributionMargin: 99,
-      marginPercent: 74,
+      otherVariable: 29,        // cleaning $15 + depreciation $5 + damage $5 + Stripe ~$4
+      contributionMargin: 95,
+      marginPercent: 71,
     },
     testSegment: 'US nationwide — event-driven renters, weddings, galas 25-50',
-    keyAdvantage: 'Highest margin per transaction (74%). Zero commitment = widest audience. Pre-positioned items = 2-day delivery.',
+    keyAdvantage: 'Highest margin per transaction (71%). Zero commitment = widest audience. Pre-positioned items = 2-day delivery.',
     keyRisk: 'No recurring revenue. Unpredictable demand. Needs pre-positioned US inventory.',
   },
 ]
@@ -99,8 +103,8 @@ export const modelSummary = {
   rotateModels: 1,
   editModels: 2,
   priceRange: '$29–$199',
-  marginRange: '46%–90%',
-  bestMargin: { id: 'R2', name: 'Rent-to-Own', margin: 90 },
+  marginRange: '43%–87%',
+  bestMargin: { id: 'R2', name: 'Rent-to-Own', margin: 87 },
   bestRevenue: { id: 'E1', name: 'Membership + Rental', revenue: 140 },
   lowestRisk: { id: 'E3', name: 'Event Rental', reason: 'No commitment, widest audience, pre-positioned items' },
 }

@@ -45,16 +45,26 @@ export const decisions: Decision[] = [
     description: 'Weekly planning on Saturdays via Claude Code. Review model metrics, kill/scale decisions.',
   },
   {
-    id: 'D10', status: 'pending', title: 'Pre-position Items in US',
+    id: 'D10', status: 'decided', title: '$200 Security Deposit (Stripe Hold)',
+    description: '$200 authorization hold on card for every rental/subscription. Not a charge — released after return or ownership.',
+    details: 'Covers damage, loss, late returns. Stripe auth hold = no cash impact to customer. Released 5-7 days after item return. Rent-to-Own: released after 12 months (ownership).',
+  },
+  {
+    id: 'D11', status: 'pending', title: 'Pre-position Items in US',
     description: 'Ship 20-30 popular items bulk to US contact. Enables 2-day domestic delivery for Event Rental.',
     details: 'Reduces E3 shipping from $40 round-trip to $20. Makes Event Rental viable (no 5-7 day DHL wait).',
   },
   {
-    id: 'D11', status: 'pending', title: 'US Returns Address',
+    id: 'D12', status: 'pending', title: 'US Returns Address',
     description: 'Need US-based address for returns. Friend/family for first 10-20 customers.',
   },
   {
-    id: 'D12', status: 'pending', title: 'Cleaning Partner (US)',
+    id: 'D13', status: 'pending', title: 'Cleaning Partner (US)',
     description: 'Luxury dry cleaner in US for items between rentals.',
+  },
+  {
+    id: 'D14', status: 'pending', title: 'Terms of Service & Rental Agreement',
+    description: 'Legal docs required before first customer: ToS, privacy policy, rental agreement template.',
+    details: 'Cover: rental terms, damage liability, cancellation policy, dispute resolution. Auto-sent via email on checkout.',
   },
 ]

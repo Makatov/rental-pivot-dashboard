@@ -76,6 +76,10 @@ export function ModelComparison() {
                   <span className="text-gray-400">Buyout</span>
                   <p className="font-semibold truncate">{model.mechanics.buyout.split('.')[0]}</p>
                 </div>
+                <div className="col-span-2">
+                  <span className="text-gray-400">Deposit</span>
+                  <p className="font-semibold">{model.mechanics.securityDeposit.split('(')[0].trim()}</p>
+                </div>
               </div>
 
               {/* Unit economics */}

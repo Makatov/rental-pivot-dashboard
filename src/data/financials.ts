@@ -3,19 +3,20 @@ import { BudgetItem, MonthProjection } from '@/types'
 export const totalBudget = 10000
 
 // v4 — content-first, 3 models, $2K ads, DHL-direct
+// Customs increased to $1,800 (luxury items, even pre-owned, attract higher duties)
 export const budgetAllocation: BudgetItem[] = [
   { category: 'DHL Shipping (KZ→US)', amount: 2500, percentage: 25 },
+  { category: 'Customs & Duties', amount: 1800, percentage: 18 },
   { category: 'Meta Ads', amount: 1200, percentage: 12 },
   { category: 'Micro-influencers', amount: 800, percentage: 8 },
-  { category: 'Customs & Duties', amount: 1200, percentage: 12 },
-  { category: 'Content & Photo', amount: 500, percentage: 5 },
   { category: 'Cleaning (US-side)', amount: 600, percentage: 6 },
-  { category: 'Branded Packaging', amount: 400, percentage: 4 },
+  { category: 'Content & Photo', amount: 500, percentage: 5 },
+  { category: 'Pre-position inventory (US)', amount: 500, percentage: 5 },
   { category: 'Insurance', amount: 400, percentage: 4 },
   { category: 'Returns Handling (US)', amount: 400, percentage: 4 },
+  { category: 'Branded Packaging', amount: 400, percentage: 4 },
   { category: 'Tech & Tools', amount: 200, percentage: 2 },
-  { category: 'Pre-position inventory (US)', amount: 500, percentage: 5 },
-  { category: 'Buffer', amount: 300, percentage: 3 },
+  { category: 'Buffer', amount: 700, percentage: 7 },
 ]
 
 // v4 — content-first funnel, Scenario B ($2K ads)
@@ -36,22 +37,22 @@ export const breakEven = {
   edit: { fixedCosts: 500, contributionMargin: 82, subscribers: 6 },
 }
 
-// v4 — DHL-direct, 3 models blended
+// v4 — DHL-direct, 3 models blended (incl. Stripe 2.9%+$0.30)
 export const unitEconomics = {
   rotate: {
-    arpu: 79, variableCost: 7.5, contributionMargin: 71.5, marginPercent: 90,
-    cac: 50, ltv: 858, ltvCacRatio: '17:1',
-    note: 'Rent-to-Own only. Best margin, no returns. LTV = 12 months.',
+    arpu: 79, variableCost: 10, contributionMargin: 69, marginPercent: 87,
+    cac: 50, ltv: 828, ltvCacRatio: '17:1',
+    note: 'Rent-to-Own only. Best margin, no returns. LTV = 12 months. Incl. Stripe fees.',
   },
   edit: {
-    arpu: 137, variableCost: 55.5, contributionMargin: 81.5, marginPercent: 60,
-    cac: 70, ltv: 489, ltvCacRatio: '7:1',
-    note: 'Blended E1 Membership + E3 Event. E3 pre-positioned = 74% margin.',
+    arpu: 137, variableCost: 59.5, contributionMargin: 77.5, marginPercent: 57,
+    cac: 70, ltv: 465, ltvCacRatio: '7:1',
+    note: 'Blended E1 Membership + E3 Event. E3 pre-positioned = 71% margin. Incl. Stripe fees.',
   },
   blended: {
-    arpu: 118, variableCost: 40, contributionMargin: 78, marginPercent: 66,
-    cac: 57, ltv: 612, ltvCacRatio: '11:1',
-    note: 'Content-first CAC ($0 organic, $50 influencer, $167 Meta). Blended $57.',
+    arpu: 118, variableCost: 43.5, contributionMargin: 74.5, marginPercent: 63,
+    cac: 57, ltv: 585, ltvCacRatio: '10:1',
+    note: 'Content-first CAC ($0 organic, $50 influencer, $167 Meta). Blended $57. Incl. Stripe fees.',
   },
 }
 
