@@ -15,8 +15,8 @@ const Legend = dynamic(() => import('recharts').then(m => m.Legend), { ssr: fals
 
 export function FinancialProjections() {
   return (
-    <section className="space-y-4">
-      <h2 className="text-xl font-bold">Financial Projections</h2>
+    <section className="space-y-3">
+      <h2 className="text-base font-bold">Financial Projections</h2>
 
       {/* Revenue vs Costs chart */}
       <Card>
@@ -24,7 +24,7 @@ export function FinancialProjections() {
           <CardTitle className="text-sm">6-Month Revenue vs Costs</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-[250px]">
+          <div className="h-[200px]">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={monthlyProjections} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
@@ -75,7 +75,7 @@ export function FinancialProjections() {
               return (
                 <div key={key} className="space-y-1">
                   <p className="text-xs font-medium text-gray-500 uppercase">{key}</p>
-                  <p className="text-lg font-bold">${ue.arpu}</p>
+                  <p className="text-base font-bold">${ue.arpu}</p>
                   <p className="text-[10px] text-gray-400">ARPU</p>
                   <p className="text-sm font-semibold text-emerald-600">{ue.marginPercent}%</p>
                   <p className="text-[10px] text-gray-400">Margin</p>

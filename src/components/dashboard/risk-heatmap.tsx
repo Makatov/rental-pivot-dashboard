@@ -32,8 +32,8 @@ export function RiskHeatmap() {
   const selectedRisk = risks.find(r => r.id === selected)
 
   return (
-    <section className="space-y-4">
-      <h2 className="text-xl font-bold">Risk Matrix</h2>
+    <section className="space-y-3">
+      <h2 className="text-base font-bold">Risk Matrix</h2>
 
       {/* Heatmap grid */}
       <div className="overflow-x-auto">

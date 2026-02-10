@@ -20,14 +20,14 @@ const PRICE_COLORS = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#dbeafe']
 
 export function InventoryCharts() {
   return (
-    <section className="space-y-4">
-      <h2 className="text-xl font-bold">Inventory Analytics</h2>
+    <section className="space-y-3">
+      <h2 className="text-base font-bold">Inventory Analytics</h2>
 
       {/* Top brands */}
       <Card>
         <CardHeader><CardTitle className="text-sm">Top 15 Brands</CardTitle></CardHeader>
         <CardContent>
-          <div className="h-[300px]">
+          <div className="h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={brandData} layout="vertical" margin={{ left: 10, right: 5, top: 0, bottom: 0 }}>
                 <XAxis type="number" tick={{ fontSize: 10 }} />
@@ -46,7 +46,7 @@ export function InventoryCharts() {
       <Card>
         <CardHeader><CardTitle className="text-sm">Top Categories</CardTitle></CardHeader>
         <CardContent>
-          <div className="h-[250px]">
+          <div className="h-[200px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={categoryData.slice(0, 8)} layout="vertical" margin={{ left: 10, right: 5, top: 0, bottom: 0 }}>
                 <XAxis type="number" tick={{ fontSize: 10 }} />
@@ -59,7 +59,7 @@ export function InventoryCharts() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3">
         {/* Condition donut */}
         <Card>
           <CardHeader><CardTitle className="text-sm">Condition</CardTitle></CardHeader>

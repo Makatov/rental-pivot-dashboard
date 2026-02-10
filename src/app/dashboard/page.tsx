@@ -15,17 +15,17 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b px-4 py-3">
-        <div className="flex items-center gap-3 max-w-lg mx-auto">
-          <Link href="/" className="p-1 -ml-1">
-            <ArrowLeft className="h-5 w-5" />
+      <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b px-4 py-2.5">
+        <div className="flex items-center gap-2.5 max-w-lg mx-auto">
+          <Link href="/" className="p-0.5 -ml-1">
+            <ArrowLeft className="h-4 w-4" />
           </Link>
-          <h1 className="text-lg font-bold">Team Dashboard</h1>
+          <h1 className="text-sm font-bold">Team Dashboard</h1>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-lg mx-auto px-4 py-6 space-y-10">
+      <div className="max-w-lg mx-auto px-4 py-4 space-y-7">
         <StatusOverview />
         <DecisionsBoard />
         <TimelineChart />
@@ -35,7 +35,7 @@ export default function DashboardPage() {
         <InventoryCharts />
         <Milestones />
 
-        <div className="h-8" />
+        <div className="h-4" />
       </div>
     </main>
   )

@@ -14,17 +14,17 @@ const COLORS = ['#6366f1', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#3b82f6'
 
 export function BudgetBurn() {
   return (
-    <section className="space-y-4">
-      <h2 className="text-xl font-bold">Budget: ${totalBudget.toLocaleString()}</h2>
+    <section className="space-y-3">
+      <h2 className="text-base font-bold">Budget: ${totalBudget.toLocaleString()}</h2>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-3">
         {/* Donut chart */}
         <Card>
           <CardHeader>
             <CardTitle className="text-sm">Allocation</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="h-[200px]">
+            <div className="h-[170px]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
