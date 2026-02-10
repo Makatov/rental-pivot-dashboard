@@ -40,12 +40,12 @@ export function TrendingGrid({ items, brands }: TrendingGridProps) {
           <div className="flex gap-3 pb-4">
             {items.map((item) => (
               <div key={item.id} className="flex-shrink-0 w-40 sm:w-48 group">
-                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-2 relative bg-secondary">
+                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-2 relative bg-[#F6F6F6]">
                   <Image
                     src={item.imageUrl}
                     alt={`${item.brand} ${item.category}`}
                     fill
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 160px, 192px"
                     unoptimized
                   />

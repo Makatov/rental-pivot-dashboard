@@ -35,12 +35,12 @@ export function ValueSection({ items, theme }: ValueSectionProps) {
 
             return (
               <Card key={item.id} className="overflow-hidden">
-                <div className="aspect-[3/4] relative bg-secondary">
+                <div className="aspect-[3/4] relative bg-[#F6F6F6]">
                   <Image
                     src={item.imageUrl}
                     alt={`${item.brand} ${item.category}`}
                     fill
-                    className="object-contain p-2"
+                    className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
                     unoptimized
                   />
