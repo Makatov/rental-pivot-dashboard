@@ -8,7 +8,7 @@ export const policies: Policy[] = [
       { label: '$200 auth hold', description: 'Stripe authorization hold on credit card — NOT a charge, customer sees "pending"' },
       { label: 'Released 5-7 days', description: 'After item return and inspection' },
       { label: 'Deductions', description: 'Unrepairable damage, lost item, late return (>3 days)' },
-      { label: 'Rent-to-Own', description: 'Deposit released after 12 months when customer takes ownership' },
+      { label: 'Rotate Sub', description: 'Deposit held while subscription active. Released on cancellation after items returned' },
     ],
   },
   {
@@ -34,7 +34,7 @@ export const policies: Policy[] = [
     id: 'cancellation',
     title: 'Cancellation',
     items: [
-      { label: 'Rent-to-Own', description: 'Cancel anytime. Return item. Forfeit prior payments. Deposit returned' },
+      { label: 'Rotate Sub', description: 'Cancel anytime. Return both items within 7 days. Deposit returned after inspection' },
       { label: 'Membership', description: 'Cancel anytime. Return all items within 7 days. Deposit returned' },
       { label: 'Event Rental', description: '48+ hrs before ship → full refund. <48 hrs → 50% refund. After delivery → no refund' },
     ],

@@ -33,7 +33,7 @@ export const timelineData: TimelineWeek[] = [
   },
   {
     week: 6, phase: 'Influencers + Build', phaseColor: '#8b5cf6',
-    tasks: ['Influencer posts go live', 'Launch Rent-to-Own on site', 'Launch Membership on site', 'Email automation setup'],
+    tasks: ['Influencer posts go live', 'Launch Rotate Subscription on site', 'Launch Membership on site', 'Email automation setup'],
     milestone: 'Site live, 15+ customers',
   },
   {

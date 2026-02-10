@@ -83,8 +83,8 @@ export function BudgetBurn() {
                 <span className="font-semibold">${breakEven.combined.fixedCosts.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>rotate — Rent-to-Own</span>
-                <span className="font-semibold">{breakEven.rotate.subscribers} subs (90% margin)</span>
+                <span>rotate — Subscription</span>
+                <span className="font-semibold">{breakEven.rotate.subscribers} subs (41% margin)</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span>ÉDIT — Membership + Event</span>

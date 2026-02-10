@@ -8,48 +8,95 @@ import { BusinessModel } from '@/types'
 // Depreciation: ~4% per rental cycle ≈ $10/rental
 // Damage reserve: $5/rental
 
-// ── R2 Rent-to-Own (from KZ, bulk shipping) ────────────────────────
-const r2: BusinessModel = {
+// ── R2 Rotate Subscription — Pre-positioned (US inventory) ─────────
+// Inspired by Nuuly ($98/6 mid-range items, profitable).
+// Adapted for luxury: 2 items ($555 retail each) + 1 swap/mo.
+// $119/mo = ~11% of $1,110 retail value — within 10-20% industry norm.
+const r2PrePositioned: BusinessModel = {
   id: 'R2',
   brand: 'rotate',
-  name: 'Rent-to-Own',
-  subtitle: 'Every payment builds toward ownership',
+  name: 'Rotate Subscription',
+  subtitle: '2 luxury items, refresh monthly',
+  type: 'subscription',
+  scenarioId: 'pre-positioned',
+  pricing: {
+    display: '$119/mo',
+    monthlyEquivalent: 119,
+    details: '$119/month for 2 luxury items. Swap 1 item/month. Buy any item at 50% off retail.',
+  },
+  mechanics: {
+    items: '2 items at a time',
+    swaps: '1 swap/month included',
+    buyout: '50% off retail anytime during rental',
+    commitment: 'Monthly — cancel anytime, return items',
+    securityDeposit: '$200 hold (Stripe auth, released after return)',
+  },
+  economics: {
+    revenuePerCustomer: 119,
+    costs: {
+      shippingOut: 10.00,      // 1 swap domestic out
+      shippingReturn: 10.00,   // 1 swap domestic return
+      customs: 1.80,           // pre-position amort: 2 × $22.50 / 25 lifetime
+      cleaning: 20.00,         // 1 returned item (US dry clean)
+      damageReserve: 5.00,
+      stripeFees: 3.75,        // 2.9% × $119 + $0.30
+      depreciation: 20.00,     // 2 items × $10/mo
+    },
+    totalVariable: 70.55,
+    contributionMargin: 48.45,
+    marginPercent: 41,
+    cac: 60,
+    paybackMonths: 1.2,
+    ltv: 581,                  // $48.45 × 12
+    ltvCacRatio: '10:1',
+  },
+  testSegment: 'US nationwide — fashion-forward women 22-35 who want variety',
+  keyAdvantage: 'Recurring + swaps = high retention. Nuuly proved subscription works. $0 COGS makes margins strong.',
+  keyRisk: 'Swap logistics add cost. Need US cleaning partner. Depreciation of 2 luxury items = $20/mo.',
+}
+
+// ── R2 Rotate Subscription — From KZ (all logistics via KZ) ────────
+const r2FromKz: BusinessModel = {
+  id: 'R2',
+  brand: 'rotate',
+  name: 'Rotate Subscription',
+  subtitle: '2 luxury items, refresh monthly',
   type: 'subscription',
   scenarioId: 'from-kz',
   pricing: {
-    display: '$79/item/mo',
-    monthlyEquivalent: 79,
-    details: 'Pay monthly per item. After 12 months, it\'s yours — no buyout fee. Early buyout at 20% discount on remaining.',
+    display: '$119/mo',
+    monthlyEquivalent: 119,
+    details: '$119/month for 2 luxury items. Swap 1 item/month. Buy any item at 50% off retail.',
   },
   mechanics: {
-    items: '1-3 items (pick individually)',
-    swaps: 'None — item stays with you',
-    buyout: 'Automatic after 12 payments. Early buyout = remaining balance -20%.',
-    commitment: '12-month plan per item, cancel anytime (forfeit payments)',
-    securityDeposit: '$200 hold per item (Stripe auth, released after ownership or return)',
+    items: '2 items at a time',
+    swaps: '1 swap/month included',
+    buyout: '50% off retail anytime during rental',
+    commitment: 'Monthly — cancel anytime, return items',
+    securityDeposit: '$200 hold (Stripe auth, released after return)',
   },
   economics: {
-    revenuePerCustomer: 79,
+    revenuePerCustomer: 119,
     costs: {
-      shippingOut: 0.63,       // $30 bulk(4) / 4 = $7.50, amortized 12mo
-      shippingReturn: 0,       // customer owns — no return
-      customs: 1.25,           // $15 amortized 12mo
-      cleaning: 0,             // customer owns — no cleaning
+      shippingOut: 7.50,       // swap item from KZ (batch 4)
+      shippingReturn: 17.50,   // domestic to hub $10 + batch to KZ $7.50
+      customs: 18.75,          // $15 swap customs + $3.75 initial set amort
+      cleaning: 8.00,          // KZ cleaning (cheaper than US $20)
       damageReserve: 5.00,
-      stripeFees: 2.59,        // 2.9% × $79 + $0.30
-      depreciation: 0,         // customer owns at end
+      stripeFees: 3.75,        // 2.9% × $119 + $0.30
+      depreciation: 20.00,     // 2 items × $10/mo
     },
-    totalVariable: 9.47,
-    contributionMargin: 69.53,
-    marginPercent: 88,
+    totalVariable: 80.50,
+    contributionMargin: 38.50,
+    marginPercent: 32,
     cac: 60,
-    paybackMonths: 0.9,
-    ltv: 834,                  // $69.53 × 12
-    ltvCacRatio: '14:1',
+    paybackMonths: 1.6,
+    ltv: 462,                  // $38.50 × 12
+    ltvCacRatio: '8:1',
   },
-  testSegment: 'US nationwide — aspirational luxury buyers 22-35',
-  keyAdvantage: 'Best margins (88%). No return logistics. Customer invested in item care. Simplest operations.',
-  keyRisk: 'Low ARPU per item. Need 2+ items/customer for strong revenue. 12-month lock-up of inventory.',
+  testSegment: 'US nationwide — fashion-forward women 22-35 who want variety',
+  keyAdvantage: 'No US inventory needed. Ship sets from KZ, returns batch back. KZ cleaning = $8 vs $20 US.',
+  keyRisk: 'Swap logistics KZ↔US add cost (32% margin). 7-10 day swap turnaround. Needs batch coordination.',
 }
 
 // ── E1 Membership — Pre-positioned (US inventory) ──────────────────
@@ -228,24 +275,24 @@ const e3FromKz: BusinessModel = {
   keyRisk: 'Longer lead times (7-10 days vs 2). Needs advance booking. Customs variability.',
 }
 
-// Primary models (default scenarios for backward compat)
-export const businessModels: BusinessModel[] = [r2, e1PrePositioned, e3PrePositioned]
+// Primary models (default scenarios — pre-positioned for all)
+export const businessModels: BusinessModel[] = [r2PrePositioned, e1PrePositioned, e3PrePositioned]
 
 // All scenarios for toggle UI
 export const businessModelScenarios: Record<string, { 'pre-positioned'?: BusinessModel; 'from-kz'?: BusinessModel }> = {
-  R2: { 'from-kz': r2 },
+  R2: { 'pre-positioned': r2PrePositioned, 'from-kz': r2FromKz },
   E1: { 'pre-positioned': e1PrePositioned, 'from-kz': e1FromKz },
   E3: { 'pre-positioned': e3PrePositioned, 'from-kz': e3FromKz },
 }
 
-// Summary stats (updated)
+// Summary stats (updated — R2 redesigned as subscription with swaps)
 export const modelSummary = {
   totalModels: 3,
   rotateModels: 1,
   editModels: 2,
   priceRange: '$29–$199',
-  marginRange: '25%–88%',
-  bestMargin: { id: 'R2', name: 'Rent-to-Own', margin: 88 },
+  marginRange: '25%–55%',
+  bestMargin: { id: 'E3', name: 'Event Rental', margin: 55 },
   bestRevenue: { id: 'E1', name: 'Membership + Rental', revenue: 140 },
   lowestRisk: { id: 'E3', name: 'Event Rental', reason: 'No commitment, widest audience, pre-positioned items' },
 }

@@ -2,7 +2,7 @@ import { SubscriptionPlan } from '@/types'
 
 // v4 — 3 models only
 export const rotatePlans: SubscriptionPlan[] = [
-  { name: 'Rent-to-Own', price: 79, currency: '$', items: 1, swaps: 'Keep it', bestFor: 'Own your dream piece in 12 months', featured: true },
+  { name: 'Rotate', price: 119, currency: '$', items: 2, swaps: '1/month', bestFor: 'Refresh your luxury wardrobe monthly', featured: true },
 ]
 
 export const editPlans: SubscriptionPlan[] = [

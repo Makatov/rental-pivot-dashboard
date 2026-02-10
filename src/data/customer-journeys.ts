@@ -3,18 +3,18 @@ import { CustomerJourney } from '@/types'
 export const customerJourneys: CustomerJourney[] = [
   {
     modelId: 'R2',
-    modelName: 'Rent-to-Own',
+    modelName: 'Rotate Subscription',
     brand: 'rotate',
     steps: [
       { step: 1, title: 'Discovery', description: 'Customer finds us on Instagram (organic post, influencer, or ad)', actor: 'customer' },
-      { step: 2, title: 'Browse & Pick', description: 'DM conversation or website — picks 1-3 items', actor: 'customer' },
-      { step: 3, title: 'Checkout', description: 'Stripe payment link. $79/item/mo + $200 refundable deposit per item (auth hold)', actor: 'stripe' },
-      { step: 4, title: 'Ship from KZ', description: 'Item ships via DHL. 5-7 business days. Tracking shared via DM/email', actor: 'dhl' },
-      { step: 5, title: 'Wear & Keep', description: 'Customer keeps and wears the item. No returns, no swaps', actor: 'customer' },
-      { step: 6, title: 'Monthly Billing', description: 'Stripe charges $79/item automatically on the same date each month', actor: 'stripe' },
-      { step: 7, title: 'Ownership (12mo)', description: 'Item is theirs. No final payment, no buyout fee. Deposit released', actor: 'customer' },
-      { step: 8, title: 'Early Buyout (optional)', description: 'Anytime — pay remaining balance minus 20%. Deposit returned', actor: 'customer' },
-      { step: 9, title: 'Cancellation', description: 'Return item at customer expense. Deposit refunded minus damage. Prior payments forfeited', actor: 'us' },
+      { step: 2, title: 'Browse & Pick', description: 'Website or DM — picks 2 luxury items for their first box', actor: 'customer' },
+      { step: 3, title: 'Checkout', description: 'Stripe: $119/mo subscription + $200 refundable deposit (auth hold)', actor: 'stripe' },
+      { step: 4, title: 'Shipping', description: '2 items ship via DHL from KZ (5-7 days) or domestic (2-3 days if pre-positioned)', actor: 'dhl' },
+      { step: 5, title: 'Wear & Style', description: 'Customer enjoys 2 luxury items (~$1,100 retail value) for the month', actor: 'customer' },
+      { step: 6, title: 'Monthly Swap', description: '1 swap/month included: return 1 item, pick 1 new item from catalog', actor: 'customer' },
+      { step: 7, title: 'Return & Clean', description: 'Returned item goes to US hub → cleaning → back in rotation', actor: 'cleaner' },
+      { step: 8, title: 'Buy Option', description: 'Love an item? Buy at 50% off retail anytime during rental', actor: 'customer' },
+      { step: 9, title: 'Cancel', description: 'Cancel anytime — return both items. Deposit refunded after inspection', actor: 'us' },
     ],
   },
   {

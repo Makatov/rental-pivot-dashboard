@@ -4,8 +4,8 @@ import { Decision } from '@/types'
 export const decisions: Decision[] = [
   {
     id: 'D1', status: 'decided', title: '3 Models, Not 7',
-    description: 'Rent-to-Own (rotate), Membership+Rental (ÉDIT), Event Rental (ÉDIT). Killed 4 models with weak economics.',
-    details: 'Killed: R1 (RTR-clone, they\'re not profitable after 15 years), R3 (shipping costs kill box model), E2 (quarterly = low touchpoint), E4 ($499/mo = no market for unknown brand).',
+    description: 'Rotate Subscription (rotate), Membership+Rental (ÉDIT), Event Rental (ÉDIT). Killed 4 models with weak economics.',
+    details: 'Killed: R1 (RTR-clone, they\'re not profitable after 15 years), R3 (shipping costs kill box model), E2 (quarterly = low touchpoint), E4 ($499/mo = no market for unknown brand). R2 redesigned from Rent-to-Own → Subscription with swaps (Nuuly-inspired).',
   },
   {
     id: 'D2', status: 'decided', title: 'Content-First, Ads-Second',
@@ -19,12 +19,12 @@ export const decisions: Decision[] = [
   },
   {
     id: 'D4', status: 'decided', title: 'Subscription + Buyout Core',
-    description: 'Rent 12 months → own at 5% (R2: auto-own at 0%). Event Rental: buy at 60% off during rental.',
-    details: 'Buyout eliminates return logistics. Customer invested in item care. Revenue from buyouts is pure margin.',
+    description: 'R2: $119/mo subscription + swap + buy at 50% off. E1: membership + rental + buy at 50% off. E3: event rental + buy at 60% off.',
+    details: 'Buyout at every model = extra revenue stream. Nuuly proved subscription retention > rent-to-own. Swaps keep customers engaged.',
   },
   {
     id: 'D5', status: 'decided', title: 'Both Brands Target US',
-    description: 'rotate (accessible, Rent-to-Own) and ÉDIT (premium, Membership + Event) both in US market.',
+    description: 'rotate (subscription with swaps) and ÉDIT (premium, Membership + Event) both in US market.',
     details: 'No London. ÉDIT repositioned to US premium. Shipping from KZ → any US city costs the same.',
   },
   {
@@ -47,7 +47,7 @@ export const decisions: Decision[] = [
   {
     id: 'D10', status: 'decided', title: '$200 Security Deposit (Stripe Hold)',
     description: '$200 authorization hold on card for every rental/subscription. Not a charge — released after return or ownership.',
-    details: 'Covers damage, loss, late returns. Stripe auth hold = no cash impact to customer. Released 5-7 days after item return. Rent-to-Own: released after 12 months (ownership).',
+    details: 'Covers damage, loss, late returns. Stripe auth hold = no cash impact to customer. Released 5-7 days after item return. Rotate Sub: held while active, released on cancel.',
   },
   {
     id: 'D11', status: 'pending', title: 'Pre-position Items in US',

@@ -163,6 +163,7 @@ function ModelCard({ model }: { model: BusinessModel }) {
 
 export function ModelComparison() {
   const [scenarios, setScenarios] = useState<Record<string, string>>({
+    R2: 'pre-positioned',
     E1: 'pre-positioned',
     E3: 'pre-positioned',
   })

@@ -30,19 +30,19 @@ export const monthlyProjections: MonthProjection[] = [
   { month: 6, label: 'Optimize', subscribers: 55, revenue: 5800, costs: 3700, net: 2100, cumulative: 5750 },
 ]
 
-// v5 — corrected with granular costs, customs, depreciation
+// v6 — R2 redesigned as Rotate Subscription (was Rent-to-Own)
 export const breakEven = {
-  combined: { fixedCosts: 800, avgContributionMargin: 65, subscribers: 13, targetWeek: 6 },
-  rotate: { fixedCosts: 300, contributionMargin: 69.53, subscribers: 5 },
+  combined: { fixedCosts: 800, avgContributionMargin: 58, subscribers: 14, targetWeek: 6 },
+  rotate: { fixedCosts: 300, contributionMargin: 48.45, subscribers: 7 },
   edit: { fixedCosts: 500, contributionMargin: 63.10, subscribers: 8 },  // blended E1+E3 pre-positioned
 }
 
-// v5 — granular unit economics with customs, depreciation, bulk shipping
+// v6 — R2 = Rotate Subscription with swaps (Nuuly-inspired)
 export const unitEconomics = {
   rotate: {
-    arpu: 79, variableCost: 9.47, contributionMargin: 69.53, marginPercent: 88,
-    cac: 60, ltv: 834, ltvCacRatio: '14:1',
-    note: 'Rent-to-Own. COGS=$0. Bulk KZ→US ($7.50/item). No returns. LTV=12mo. Incl. Stripe+customs+damage.',
+    arpu: 119, variableCost: 70.55, contributionMargin: 48.45, marginPercent: 41,
+    cac: 60, ltv: 581, ltvCacRatio: '10:1',
+    note: 'Rotate subscription. 2 items + 1 swap/mo. Pre-positioned. COGS=$0. Incl. shipping, cleaning, depreciation.',
   },
   edit: {
     arpu: 137, variableCost: 73.90, contributionMargin: 63.10, marginPercent: 46,
@@ -50,8 +50,8 @@ export const unitEconomics = {
     note: 'Blended E1+E3 pre-positioned. Incl. cleaning, depreciation, Stripe, damage. COGS=$0.',
   },
   blended: {
-    arpu: 118, variableCost: 52.42, contributionMargin: 65.58, marginPercent: 56,
-    cac: 67, ltv: 635, ltvCacRatio: '9:1',
+    arpu: 131, variableCost: 72.80, contributionMargin: 58.22, marginPercent: 44,
+    cac: 67, ltv: 559, ltvCacRatio: '8:1',
     note: 'All 3 models blended. Pre-positioned scenarios. Incl. all granular costs. COGS=$0.',
   },
 }
