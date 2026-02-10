@@ -8,8 +8,24 @@ const lora = Lora({ subsets: ["latin"], weight: ["400", "500", "600"], variable:
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-dm-sans" });
 
 export const metadata: Metadata = {
-  title: "Rental Pivot Dashboard",
-  description: "Flimod rental pivot — team dashboard and brand demo",
+  title: "Flimod — Rental Pivot",
+  description: "Fashion rental startup: 3 models (RO1, ED1, ED2) pre-positioned in US. Team dashboard with financials, tasks & brand demos.",
+  openGraph: {
+    title: "Flimod — Rental Pivot",
+    description: "Fashion rental startup: 3 models (RO1, ED1, ED2) pre-positioned in US. Team dashboard with financials, tasks & brand demos.",
+    siteName: "Flimod",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Flimod — Rental Pivot",
+    description: "Fashion rental startup: 3 models pre-positioned in US. Dashboard, tasks & brand demos.",
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export const viewport: Viewport = {
