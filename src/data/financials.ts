@@ -30,38 +30,41 @@ export const monthlyProjections: MonthProjection[] = [
   { month: 6, label: 'Optimize', subscribers: 55, revenue: 5800, costs: 3700, net: 2100, cumulative: 5750 },
 ]
 
-// v4 — 3 models, content-first acquisition
+// v5 — corrected with granular costs, customs, depreciation
 export const breakEven = {
-  combined: { fixedCosts: 800, avgContributionMargin: 78, subscribers: 11, targetWeek: 6 },
-  rotate: { fixedCosts: 300, contributionMargin: 71.5, subscribers: 5 },
-  edit: { fixedCosts: 500, contributionMargin: 82, subscribers: 6 },
+  combined: { fixedCosts: 800, avgContributionMargin: 65, subscribers: 13, targetWeek: 6 },
+  rotate: { fixedCosts: 300, contributionMargin: 69.53, subscribers: 5 },
+  edit: { fixedCosts: 500, contributionMargin: 63.10, subscribers: 8 },  // blended E1+E3 pre-positioned
 }
 
-// v4 — DHL-direct, 3 models blended (incl. Stripe 2.9%+$0.30)
+// v5 — granular unit economics with customs, depreciation, bulk shipping
 export const unitEconomics = {
   rotate: {
-    arpu: 79, variableCost: 10, contributionMargin: 69, marginPercent: 87,
-    cac: 50, ltv: 828, ltvCacRatio: '17:1',
-    note: 'Rent-to-Own only. Best margin, no returns. LTV = 12 months. Incl. Stripe fees.',
+    arpu: 79, variableCost: 9.47, contributionMargin: 69.53, marginPercent: 88,
+    cac: 60, ltv: 834, ltvCacRatio: '14:1',
+    note: 'Rent-to-Own. COGS=$0. Bulk KZ→US ($7.50/item). No returns. LTV=12mo. Incl. Stripe+customs+damage.',
   },
   edit: {
-    arpu: 137, variableCost: 59.5, contributionMargin: 77.5, marginPercent: 57,
-    cac: 70, ltv: 465, ltvCacRatio: '7:1',
-    note: 'Blended E1 Membership + E3 Event. E3 pre-positioned = 71% margin. Incl. Stripe fees.',
+    arpu: 137, variableCost: 73.90, contributionMargin: 63.10, marginPercent: 46,
+    cac: 70, ltv: 535, ltvCacRatio: '8:1',
+    note: 'Blended E1+E3 pre-positioned. Incl. cleaning, depreciation, Stripe, damage. COGS=$0.',
   },
   blended: {
-    arpu: 118, variableCost: 43.5, contributionMargin: 74.5, marginPercent: 63,
-    cac: 57, ltv: 585, ltvCacRatio: '10:1',
-    note: 'Content-first CAC ($0 organic, $50 influencer, $167 Meta). Blended $57. Incl. Stripe fees.',
+    arpu: 118, variableCost: 52.42, contributionMargin: 65.58, marginPercent: 56,
+    cac: 67, ltv: 635, ltvCacRatio: '9:1',
+    note: 'All 3 models blended. Pre-positioned scenarios. Incl. all granular costs. COGS=$0.',
   },
 }
 
-// DHL shipping reference
+// Shipping economics (updated with bulk)
 export const shippingEconomics = {
   dhlDiscount: 30,
   kzToUs: 30,
+  kzToUsBulk: 7.50,       // 4 items per package
+  customs: 15,              // per item KZ→US
   usReturn: 10,
   roundTrip: 40,
   prePositioned: { domestic: 10, roundTrip: 20 },
-  note: 'Pre-position 20-30 popular items at US contact for Event Rental (E3). Domestic shipping $10 vs $30 DHL.',
+  bulkNote: 'Bulk shipping: 4 items per DHL package = $30/4 = $7.50/item + $15 customs = $22.50 total/item.',
+  note: 'Pre-position 20-30 popular items at US contact for E1/E3. Domestic $10 vs $30 DHL. Bulk from KZ also viable.',
 }

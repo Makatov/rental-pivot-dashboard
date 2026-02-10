@@ -18,6 +18,8 @@ import { CompetitorIntel } from '@/components/dashboard/competitor-intel'
 import { GoNoGo } from '@/components/dashboard/go-no-go'
 import { ProjectProgress } from '@/components/dashboard/project-progress'
 import { Milestones } from '@/components/dashboard/milestones'
+import { ItemValueContext } from '@/components/dashboard/item-value-context'
+import { SourcesSection } from '@/components/dashboard/sources-section'
 
 export default function DashboardPage() {
   return (
@@ -35,6 +37,7 @@ export default function DashboardPage() {
       {/* Content */}
       <div className="max-w-lg mx-auto px-4 py-4 space-y-7">
         <StatusOverview />
+        <ItemValueContext />
         <ModelComparison />
         <CustomerJourneys />
         <PoliciesSection />
@@ -49,6 +52,7 @@ export default function DashboardPage() {
         <OperationsChecklist />
         <GoNoGo />
         <Milestones />
+        <SourcesSection />
         <ProjectProgress />
 
         <div className="h-4" />

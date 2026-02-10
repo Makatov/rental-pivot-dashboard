@@ -175,12 +175,35 @@ export interface ProgressItem {
   done: boolean
 }
 
+export interface BusinessModelCosts {
+  shippingOut: number
+  shippingReturn: number
+  customs: number
+  cleaning: number
+  damageReserve: number
+  stripeFees: number
+  depreciation: number
+}
+
+export interface BusinessModelEconomics {
+  revenuePerCustomer: number
+  costs: BusinessModelCosts
+  totalVariable: number
+  contributionMargin: number
+  marginPercent: number
+  cac: number
+  paybackMonths: number
+  ltv: number
+  ltvCacRatio: string
+}
+
 export interface BusinessModel {
   id: string
   brand: 'rotate' | 'edit'
   name: string
   subtitle: string
   type: 'subscription' | 'rental' | 'membership' | 'box'
+  scenarioId?: 'pre-positioned' | 'from-kz'
   pricing: {
     display: string
     monthlyEquivalent: number
@@ -193,14 +216,17 @@ export interface BusinessModel {
     commitment: string
     securityDeposit: string
   }
-  economics: {
-    revenuePerCustomer: number
-    shippingPerMonth: number
-    otherVariable: number
-    contributionMargin: number
-    marginPercent: number
-  }
+  economics: BusinessModelEconomics
   testSegment: string
   keyAdvantage: string
   keyRisk: string
+}
+
+export interface IndustrySource {
+  id: string
+  category: 'competitor' | 'market' | 'benchmark' | 'research'
+  name: string
+  url: string
+  detail: string
+  date?: string
 }
