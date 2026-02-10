@@ -17,7 +17,7 @@ export default function EditDemoPage() {
     <main className="min-h-screen" style={{ backgroundColor: editTheme.colors.bg }}>
       {/* Back button */}
       <div className="fixed top-4 left-4 z-50">
-        <Link href="/demo" className="flex items-center gap-1 px-3 py-1.5 bg-black/80 backdrop-blur-md rounded-full shadow-sm text-sm text-[#F5F5DC] border border-[#2D2D2D]">
+        <Link href="/demo" className="flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full shadow-sm text-sm text-[#3A3530]">
           <ArrowLeft className="h-4 w-4" />
           Brands
         </Link>
@@ -31,7 +31,7 @@ export default function EditDemoPage() {
       {/* Footer */}
       <footer className="px-6 py-8 text-center" style={{ backgroundColor: editTheme.colors.muted }}>
         <p className="text-xs opacity-40" style={{ color: editTheme.colors.text }}>
-          EDIT London — Demo Prototype &middot; Not a real service (yet)
+          ÉDIT London — Demo Prototype &middot; Not a real service (yet)
         </p>
       </footer>
     </main>

@@ -13,7 +13,7 @@ export function CatalogGrid({ items, theme, brands }: CatalogGridProps) {
   return (
     <section
       className="px-6 py-16"
-      style={{ backgroundColor: theme.colors.bg, color: theme.colors.text }}
+      style={{ backgroundColor: theme.colors.bg, color: theme.colors.text, fontFamily: theme.fontBody }}
     >
       <div className="max-w-lg mx-auto">
         <h2 className="text-2xl font-bold text-center mb-2">The Collection</h2>

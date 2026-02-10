@@ -93,10 +93,13 @@ export interface DemoCatalogItem {
 
 export interface BrandTheme {
   name: string
+  logoText: string
   city: string
   currency: string
   tagline: string
   heroSubtitle: string
+  fontHeading: string
+  fontBody: string
   colors: {
     primary: string
     bg: string

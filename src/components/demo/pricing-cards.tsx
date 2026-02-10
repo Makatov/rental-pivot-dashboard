@@ -12,7 +12,7 @@ export function PricingCards({ theme, plans }: PricingCardsProps) {
   return (
     <section
       className="px-6 py-16"
-      style={{ backgroundColor: theme.colors.bg, color: theme.colors.text }}
+      style={{ backgroundColor: theme.colors.bg, color: theme.colors.text, fontFamily: theme.fontBody }}
     >
       <div className="max-w-lg mx-auto">
         <h2 className="text-2xl font-bold text-center mb-2">Choose Your Plan</h2>
@@ -53,7 +53,7 @@ export function PricingCards({ theme, plans }: PricingCardsProps) {
                 className="w-full mt-4 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90"
                 style={{
                   backgroundColor: plan.featured ? theme.colors.primary : 'transparent',
-                  color: plan.featured ? (theme.name === 'EDIT' ? '#0A0A0A' : '#FFFFFF') : theme.colors.primary,
+                  color: plan.featured ? '#FFFFFF' : theme.colors.primary,
                   border: plan.featured ? 'none' : `1px solid ${theme.colors.primary}`,
                 }}
               >

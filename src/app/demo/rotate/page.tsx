@@ -17,7 +17,7 @@ export default function RotateDemoPage() {
     <main className="min-h-screen" style={{ backgroundColor: rotateTheme.colors.bg }}>
       {/* Back button */}
       <div className="fixed top-4 left-4 z-50">
-        <Link href="/demo" className="flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full shadow-sm text-sm">
+        <Link href="/demo" className="flex items-center gap-1 px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full shadow-sm text-sm text-[#3A3530]">
           <ArrowLeft className="h-4 w-4" />
           Brands
         </Link>
@@ -31,7 +31,7 @@ export default function RotateDemoPage() {
       {/* Footer */}
       <footer className="px-6 py-8 text-center" style={{ backgroundColor: rotateTheme.colors.muted }}>
         <p className="text-xs opacity-40" style={{ color: rotateTheme.colors.text }}>
-          ROTATE NYC — Demo Prototype &middot; Not a real service (yet)
+          rotate NYC — Demo Prototype &middot; Not a real service (yet)
         </p>
       </footer>
     </main>

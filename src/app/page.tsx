@@ -7,7 +7,7 @@ export default function Home() {
       {/* Header */}
       <div className="px-6 pt-8 pb-4 text-center">
         <h1 className="text-2xl font-bold">Rental Pivot</h1>
-        <p className="text-sm text-gray-500 mt-1">Flimod &rarr; EDIT + ROTATE</p>
+        <p className="text-sm text-gray-500 mt-1">Flimod &rarr; ÉDIT + rotate</p>
       </div>
 
       {/* Navigation cards */}
@@ -34,7 +34,7 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-lg font-bold">Brand Demo</h2>
-                <p className="text-sm text-gray-500">EDIT (London) & ROTATE (NYC) prototypes</p>
+                <p className="text-sm text-gray-500">ÉDIT (London) & rotate (NYC) prototypes</p>
               </div>
             </div>
           </div>
