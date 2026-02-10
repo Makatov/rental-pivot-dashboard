@@ -40,7 +40,7 @@ export function TrendingGrid({ items, brands }: TrendingGridProps) {
           <div className="flex gap-3 pb-4">
             {items.map((item) => (
               <div key={item.id} className="flex-shrink-0 w-40 sm:w-48 group">
-                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-2 relative bg-[#F6F6F6]">
+                <div className="aspect-[3/4] rounded-lg overflow-hidden mb-2 relative bg-background">
                   <Image
                     src={item.imageUrl}
                     alt={`${item.brand} ${item.category}`}
