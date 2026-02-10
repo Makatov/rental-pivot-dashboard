@@ -16,25 +16,25 @@ const steps = [
 export function HowItWorks({ theme }: HowItWorksProps) {
   return (
     <section
-      className="px-6 py-16"
+      className="px-5 py-10"
       style={{ backgroundColor: theme.colors.muted, color: theme.colors.text, fontFamily: theme.fontBody }}
     >
       <div className="max-w-lg mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-10">How It Works</h2>
+        <h2 className="text-lg font-bold text-center mb-8">How It Works</h2>
 
-        <div className="grid grid-cols-3 gap-4 text-center">
+        <div className="grid grid-cols-3 gap-3 text-center">
           {steps.map((step, i) => {
             const Icon = step.icon
             return (
-              <div key={i} className="space-y-3">
+              <div key={i} className="space-y-2">
                 <div
-                  className="w-14 h-14 rounded-full mx-auto flex items-center justify-center"
+                  className="w-11 h-11 rounded-full mx-auto flex items-center justify-center"
                   style={{ backgroundColor: theme.colors.primary + '20' }}
                 >
-                  <Icon className="h-6 w-6" style={{ color: theme.colors.primary }} />
+                  <Icon className="h-5 w-5" style={{ color: theme.colors.primary }} />
                 </div>
-                <h3 className="font-semibold text-sm">{step.title}</h3>
-                <p className="text-xs opacity-70 leading-relaxed">{step.description}</p>
+                <h3 className="font-semibold text-xs">{step.title}</h3>
+                <p className="text-[10px] opacity-70 leading-relaxed">{step.description}</p>
               </div>
             )
           })}

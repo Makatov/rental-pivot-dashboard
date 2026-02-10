@@ -11,38 +11,38 @@ interface PricingCardsProps {
 export function PricingCards({ theme, plans }: PricingCardsProps) {
   return (
     <section
-      className="px-6 py-16"
+      className="px-5 py-10"
       style={{ backgroundColor: theme.colors.bg, color: theme.colors.text, fontFamily: theme.fontBody }}
     >
       <div className="max-w-lg mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-2">Choose Your Plan</h2>
-        <p className="text-sm text-center opacity-60 mb-8">Cancel anytime. 15% off annual plans.</p>
+        <h2 className="text-lg font-bold text-center mb-1">Choose Your Plan</h2>
+        <p className="text-xs text-center opacity-60 mb-6">Cancel anytime. 15% off annual plans.</p>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-2xl p-5 border-2 transition-all ${plan.featured ? 'scale-[1.02]' : ''}`}
+              className={`rounded-xl p-4 border-2 transition-all ${plan.featured ? 'scale-[1.01]' : ''}`}
               style={{
                 backgroundColor: plan.featured ? theme.colors.primary + '10' : theme.colors.card,
                 borderColor: plan.featured ? theme.colors.primary : theme.colors.accent,
                 color: theme.colors.cardText,
               }}
             >
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center justify-between mb-2">
                 <div>
-                  <h3 className="font-bold text-lg">{plan.name}</h3>
-                  <p className="text-xs opacity-60">{plan.bestFor}</p>
+                  <h3 className="font-bold text-sm">{plan.name}</h3>
+                  <p className="text-[10px] opacity-60">{plan.bestFor}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-3xl font-bold" style={{ color: theme.colors.primary }}>
+                  <span className="text-2xl font-bold" style={{ color: theme.colors.primary }}>
                     {plan.currency}{plan.price}
                   </span>
-                  <span className="text-xs opacity-50">/mo</span>
+                  <span className="text-[10px] opacity-50">/mo</span>
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <Feature text={`${plan.items} items at home`} color={theme.colors.primary} />
                 <Feature text={`${plan.swaps} swaps`} color={theme.colors.primary} />
                 <Feature text="Free shipping & returns" color={theme.colors.primary} />
@@ -50,7 +50,7 @@ export function PricingCards({ theme, plans }: PricingCardsProps) {
               </div>
 
               <button
-                className="w-full mt-4 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90"
+                className="w-full mt-3 py-2 rounded-full text-xs font-semibold transition-all hover:opacity-90"
                 style={{
                   backgroundColor: plan.featured ? theme.colors.primary : 'transparent',
                   color: plan.featured ? '#FFFFFF' : theme.colors.primary,
@@ -69,8 +69,8 @@ export function PricingCards({ theme, plans }: PricingCardsProps) {
 
 function Feature({ text, color }: { text: string; color: string }) {
   return (
-    <div className="flex items-center gap-2 text-sm">
-      <Check className="h-4 w-4 flex-shrink-0" style={{ color }} />
+    <div className="flex items-center gap-2 text-xs">
+      <Check className="h-3.5 w-3.5 flex-shrink-0" style={{ color }} />
       <span className="opacity-80">{text}</span>
     </div>
   )

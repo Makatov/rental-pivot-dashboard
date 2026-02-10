@@ -12,7 +12,7 @@ export function ItemCard({ item, theme }: ItemCardProps) {
   return (
     <div className="group">
       <div
-        className="aspect-[3/4] rounded-xl overflow-hidden mb-2 relative"
+        className="aspect-[3/4] rounded-lg overflow-hidden mb-1.5 relative"
         style={{ backgroundColor: theme.colors.muted }}
       >
         <Image
@@ -24,13 +24,13 @@ export function ItemCard({ item, theme }: ItemCardProps) {
           unoptimized
         />
       </div>
-      <p className="text-xs font-semibold truncate" style={{ color: theme.colors.text }}>
+      <p className="text-[11px] font-semibold truncate" style={{ color: theme.colors.text }}>
         {item.brand}
       </p>
-      <p className="text-xs opacity-60" style={{ color: theme.colors.text }}>
+      <p className="text-[10px] opacity-60" style={{ color: theme.colors.text }}>
         {item.category}
       </p>
-      <p className="text-xs font-medium mt-0.5" style={{ color: theme.colors.primary }}>
+      <p className="text-[10px] font-medium mt-0.5" style={{ color: theme.colors.primary }}>
         {theme.currency === '$' ? `$${item.priceUsd}` : `£${Math.round(item.priceUsd * 0.79)}`} retail
       </p>
     </div>
