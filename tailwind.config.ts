@@ -11,9 +11,21 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        rotate: {
+          primary: '#E07A5F',
+          bg: '#FDFCFB',
+          accent: '#F2CC8F',
+          muted: '#F5F0EB',
+        },
+        edit: {
+          primary: '#C9A94E',
+          bg: '#0A0A0A',
+          accent: '#2D2D2D',
+          cream: '#F5F5DC',
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
