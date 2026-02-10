@@ -4,49 +4,49 @@ const steps = [
   {
     number: '01',
     icon: ShoppingBag,
-    title: 'Browse & Choose',
-    description: 'Explore our curated collection and pick your favorite pieces. New items added weekly.',
+    title: 'Choose',
+    description: 'Browse our curated collection and pick your favourites.',
   },
   {
     number: '02',
     icon: Sparkles,
-    title: 'Wear & Enjoy',
-    description: 'Receive your pieces cleaned and ready to wear. Style them your way for as long as you like.',
+    title: 'Wear',
+    description: 'Delivered cleaned and ready. Style them your way.',
   },
   {
     number: '03',
     icon: RefreshCw,
-    title: 'Swap & Repeat',
-    description: 'Ready for something new? Return your items for free and choose fresh pieces. Endlessly.',
+    title: 'Return & Repeat',
+    description: 'Send back for free. Choose new pieces. Endlessly.',
   },
 ]
 
-export function HowItWorks() {
+interface HowItWorksProps {
+  variant?: 'minimal' | 'detailed'
+}
+
+export function HowItWorks({ variant = 'minimal' }: HowItWorksProps) {
   return (
-    <section id="how-it-works" className="px-4 py-16 bg-muted">
-      <div className="mx-auto max-w-5xl">
-        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center mb-12">
+    <section id="how-it-works" className="px-4 py-14 bg-muted">
+      <div className="mx-auto max-w-4xl">
+        <h2 className="font-heading text-xl sm:text-2xl font-bold text-center mb-10">
           How It Works
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Connecting line (desktop only) */}
-          <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-0.5 bg-border" />
-
+        <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
           {steps.map((step) => {
             const Icon = step.icon
             return (
-              <div key={step.number} className="text-center relative">
-                <div className="mx-auto w-20 h-20 rounded-full bg-background border-2 border-primary flex items-center justify-center relative z-10">
-                  <Icon className="h-8 w-8 text-primary" />
+              <div key={step.number} className="space-y-3">
+                <div className="mx-auto w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-background border-2 border-primary flex items-center justify-center">
+                  <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                 </div>
-                <span className="inline-block mt-3 text-xs font-bold text-primary tracking-wider">
-                  STEP {step.number}
-                </span>
-                <h3 className="font-heading text-lg font-semibold mt-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1 leading-relaxed max-w-xs mx-auto">
-                  {step.description}
-                </p>
+                <h3 className="font-heading text-sm sm:text-base font-semibold">{step.title}</h3>
+                {variant === 'detailed' && (
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                )}
               </div>
             )
           })}

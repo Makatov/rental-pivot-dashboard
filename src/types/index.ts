@@ -105,6 +105,7 @@ export interface Testimonial {
   city: string
   quote: string
   avatar?: string
+  rating?: number
 }
 
 export interface FAQ {

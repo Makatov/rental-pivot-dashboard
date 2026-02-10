@@ -53,24 +53,24 @@
   }
 
   [data-brand="rotate"] {
-    --background: 43 38% 95%;
-    --foreground: 25 6% 20%;
+    --background: 0 0% 99%;
+    --foreground: 0 0% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 25 6% 20%;
+    --card-foreground: 0 0% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 25 6% 20%;
+    --popover-foreground: 0 0% 12%;
     --primary: 149 100% 35%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 20% 93%;
-    --secondary-foreground: 25 6% 20%;
-    --muted: 40 20% 91%;
-    --muted-foreground: 25 6% 40%;
-    --accent: 40 20% 93%;
-    --accent-foreground: 25 6% 20%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 12%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 18% 85%;
-    --input: 40 18% 85%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 149 100% 35%;
     --font-heading: var(--font-inter);
     --font-body: var(--font-dm-sans);
@@ -102,4 +102,12 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
