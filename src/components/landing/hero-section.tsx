@@ -51,21 +51,21 @@ export function HeroSection({ theme, variant, backgroundImage }: HeroSectionProp
     )
   }
 
-  // Conversion variant — fullscreen bg image with overlay
+  // Conversion variant — fullscreen bg image with gradient overlay
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center px-4 py-16 relative overflow-hidden">
+    <section className="min-h-[85vh] flex flex-col justify-end px-4 pb-12 pt-16 relative overflow-hidden">
       {backgroundImage && (
         <>
           <Image
             src={backgroundImage}
             alt=""
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="100vw"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/90" />
         </>
       )}
       {!backgroundImage && <div className="absolute inset-0 bg-background" />}
