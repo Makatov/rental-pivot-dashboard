@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge'
 export function TimelineChart() {
   return (
     <section className="space-y-3">
-      <h2 className="text-base font-bold">12-Week Timeline</h2>
+      <h2 className="text-base font-bold">{timelineData.length}-Week Timeline</h2>
 
       {/* Phase legend */}
       <div className="flex flex-wrap gap-2">
@@ -22,7 +22,7 @@ export function TimelineChart() {
       <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
         <div className="flex gap-3" style={{ minWidth: '900px' }}>
           {timelineData.map((week) => (
-            <div key={week.week} className="flex-1 min-w-[70px]">
+            <div key={week.week} className="flex-1 min-w-[65px]">
               {/* Week header */}
               <div
                 className="text-center text-xs font-bold text-white rounded-t-lg py-1"

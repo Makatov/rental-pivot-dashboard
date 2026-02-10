@@ -10,7 +10,7 @@ const Cell = dynamic(() => import('recharts').then(m => m.Cell), { ssr: false })
 const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer), { ssr: false })
 const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip), { ssr: false })
 
-const COLORS = ['#6366f1', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#3b82f6', '#64748b', '#d946ef']
+const COLORS = ['#6366f1', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#3b82f6', '#64748b', '#d946ef', '#0ea5e9', '#a3a3a3']
 
 export function BudgetBurn() {
   return (
@@ -67,8 +67,8 @@ export function BudgetBurn() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Combined target</span>
-              <span className="font-bold">{breakEven.combined.subscribers} subscribers</span>
+              <span className="text-gray-500">ROTATE target (NYC first)</span>
+              <span className="font-bold">{breakEven.rotate.subscribers} subscribers</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">Target week</span>
@@ -76,11 +76,15 @@ export function BudgetBurn() {
             </div>
             <div className="border-t pt-3 space-y-2">
               <div className="flex justify-between text-xs">
-                <span>ROTATE break-even</span>
-                <span className="font-semibold">{breakEven.rotate.subscribers} subs</span>
+                <span>Contribution margin</span>
+                <span className="font-semibold">${breakEven.rotate.contributionMargin}/sub/mo</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>EDIT break-even</span>
+                <span>Fixed costs/mo</span>
+                <span className="font-semibold">${breakEven.combined.fixedCosts.toLocaleString()}</span>
+              </div>
+              <div className="flex justify-between text-xs text-gray-400">
+                <span>EDIT (later)</span>
                 <span className="font-semibold">{breakEven.edit.subscribers} subs</span>
               </div>
             </div>
