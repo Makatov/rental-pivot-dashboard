@@ -1,83 +1,91 @@
 import { TimelineWeek } from '@/types'
 
-// v4 — content-first, 3 models, organic → influencers → Meta
+// v7 — code-first approach: build site → launch → market → scale
 export const phases = [
-  { name: 'Content + Organic', weeks: [1, 2, 3, 4], color: '#6366f1' },
-  { name: 'Influencers + Build', weeks: [5, 6, 7, 8], color: '#8b5cf6' },
-  { name: 'Launch + Meta Ads', weeks: [9, 10, 11, 12], color: '#10b981' },
-  { name: 'Scale Winner', weeks: [13, 14, 15, 16], color: '#f59e0b' },
+  { name: 'Build MVP', weeks: [1, 2, 3], color: '#6366f1' },
+  { name: 'Launch + First Sales', weeks: [4, 5, 6], color: '#8b5cf6' },
+  { name: 'Content + Influencers', weeks: [7, 8, 9, 10], color: '#10b981' },
+  { name: 'Ads + Scale', weeks: [11, 12, 13, 14, 15, 16], color: '#f59e0b' },
 ]
 
 export const timelineData: TimelineWeek[] = [
+  // Phase 1: Build MVP (code-first, no spreadsheets)
   {
-    week: 1, phase: 'Content + Organic', phaseColor: '#6366f1',
-    tasks: ['Instagram accounts for both brands', 'First 20 reels (unboxing, styling)', 'DHL account setup (-30% rate)', 'Register domains'],
+    week: 1, phase: 'Build MVP', phaseColor: '#6366f1',
+    tasks: ['Purchase domains', 'Deploy site (Shopify or custom Next.js)', 'Product catalog: upload first 50 items with photos', 'Stripe account setup'],
   },
   {
-    week: 2, phase: 'Content + Organic', phaseColor: '#6366f1',
-    tasks: ['Daily posting (3/day)', 'First DM conversations', 'Ship 20 items to US contact (pre-position)', 'Product photography batch'],
-    milestone: 'IG live, first DMs',
+    week: 2, phase: 'Build MVP', phaseColor: '#6366f1',
+    tasks: ['Checkout flows for RO1/ED1/ED2', 'Inventory tracking system in code', 'Order status tracking (placed → shipped → returned)', 'Security deposit + rental agreement on site'],
+    milestone: 'Checkout working end-to-end',
   },
   {
-    week: 3, phase: 'Content + Organic', phaseColor: '#6366f1',
-    tasks: ['First DM sales (Stripe payment links)', 'Ship items to first 2-3 customers via DHL', 'Waitlist page live', 'Identify 10 micro-influencers'],
+    week: 3, phase: 'Build MVP', phaseColor: '#6366f1',
+    tasks: ['Terms of Service + Privacy Policy live', 'Email notifications (order confirmation, shipping)', 'QA full flow: browse → checkout → payment → confirmation', 'DHL account setup (−30% rate)'],
+    milestone: 'Site ready for real orders',
+  },
+
+  // Phase 2: Launch + First Sales
+  {
+    week: 4, phase: 'Launch + First Sales', phaseColor: '#8b5cf6',
+    tasks: ['Ship 20-30 items to US contact (pre-position)', 'Product photography batch for pre-positioned items', 'Soft launch: share with friends & network', 'First test orders through the site'],
   },
   {
-    week: 4, phase: 'Content + Organic', phaseColor: '#6366f1',
-    tasks: ['5-10 organic customers', 'First customer UGC (unboxing)', 'Pre-positioned items arrive at US contact', 'Setup Stripe for 3 models'],
-    milestone: '5-10 customers, $0 CAC',
+    week: 5, phase: 'Launch + First Sales', phaseColor: '#8b5cf6',
+    tasks: ['Pre-positioned items arrive, go live on site', 'First real customer orders', 'Process first shipments (domestic US)', 'Instagram accounts created (link to site)'],
+    milestone: 'First paying customers',
   },
   {
-    week: 5, phase: 'Influencers + Build', phaseColor: '#8b5cf6',
-    tasks: ['Send items to 5 influencers', 'Build checkout flows (3 models)', 'First customer reviews/testimonials', 'Content from real customers'],
+    week: 6, phase: 'Launch + First Sales', phaseColor: '#8b5cf6',
+    tasks: ['5-10 customers across models', 'First returns processed', 'Cleaning partner confirmed', 'Collect first customer feedback + photos'],
+    milestone: '5-10 customers, site validated',
+  },
+
+  // Phase 3: Content + Influencers
+  {
+    week: 7, phase: 'Content + Influencers', phaseColor: '#10b981',
+    tasks: ['First Instagram content (real products, real site links)', 'Identify 10 micro-influencers', 'Customer UGC: unboxing photos/videos', 'Daily posting begins (3/day)'],
   },
   {
-    week: 6, phase: 'Influencers + Build', phaseColor: '#8b5cf6',
-    tasks: ['Influencer posts go live', 'Launch Rotate Subscription on site', 'Launch Membership on site', 'Email automation setup'],
-    milestone: 'Site live, 15+ customers',
+    week: 8, phase: 'Content + Influencers', phaseColor: '#10b981',
+    tasks: ['Send items to 5 influencers', 'Email automation live (welcome, post-rental, referral)', 'Referral program launched', '15+ customers'],
+    milestone: '15+ customers, influencers onboard',
   },
   {
-    week: 7, phase: 'Influencers + Build', phaseColor: '#8b5cf6',
-    tasks: ['Send items to 5 more influencers', 'Launch Event Rental (pre-positioned items)', 'First returns processed', 'Cleaning partner confirmed'],
+    week: 9, phase: 'Content + Influencers', phaseColor: '#10b981',
+    tasks: ['Influencer posts go live', 'Send items to 5 more influencers', 'First customer reviews/testimonials on site', 'Model comparison data: which model performs best?'],
   },
   {
-    week: 8, phase: 'Influencers + Build', phaseColor: '#8b5cf6',
-    tasks: ['20+ customers across models', 'Model comparison data', 'Prepare Meta Ad creatives (UGC-based)', 'Referral program live'],
-    milestone: '20+ customers, model data',
+    week: 10, phase: 'Content + Influencers', phaseColor: '#10b981',
+    tasks: ['25+ customers across models', 'Prepare Meta Ad creatives (UGC-based)', 'Customer interviews (5+)', 'Identify winning model'],
+    milestone: '25+ customers, model data clear',
+  },
+
+  // Phase 4: Ads + Scale
+  {
+    week: 11, phase: 'Ads + Scale', phaseColor: '#f59e0b',
+    tasks: ['Meta Ads start: boost best organic posts', '$400/week on best-performing model', 'CAC tracking per channel', 'Scale winning model inventory'],
   },
   {
-    week: 9, phase: 'Launch + Meta Ads', phaseColor: '#10b981',
-    tasks: ['Meta Ads start: boost best organic posts', '$400/week on best-performing model', 'Scale winning model', 'Kill/reduce worst model if needed'],
+    week: 12, phase: 'Ads + Scale', phaseColor: '#f59e0b',
+    tasks: ['CHECKPOINT: model + channel performance', 'Unit economics validation vs projections', '35+ customers target', 'Kill/reduce underperforming model if needed'],
+    milestone: '35+ customers, winner validated',
   },
   {
-    week: 10, phase: 'Launch + Meta Ads', phaseColor: '#10b981',
-    tasks: ['CAC comparison across channels', 'Customer interviews (5+)', 'Double down on best CAC channel', 'Increase inventory for winning model'],
-    milestone: '30+ customers',
+    week: 13, phase: 'Ads + Scale', phaseColor: '#f59e0b',
+    tasks: ['All budget → winning model + channel', 'Influencer round 2 (proven ROI creators)', 'Pre-position more inventory for demand', 'Test TikTok organic'],
   },
   {
-    week: 11, phase: 'Launch + Meta Ads', phaseColor: '#10b981',
-    tasks: ['Optimize ad creatives (UGC performs best)', 'Retention check: who stayed, who churned?', 'Buyout conversion tracking', 'Ship more inventory for demand'],
+    week: 14, phase: 'Ads + Scale', phaseColor: '#f59e0b',
+    tasks: ['45+ customers', 'Optimize ad creatives (UGC performs best)', 'Retention analysis: who stayed, who churned?', 'Buyout conversion tracking'],
+    milestone: '45+ customers, profitable',
   },
   {
-    week: 12, phase: 'Launch + Meta Ads', phaseColor: '#10b981',
-    tasks: ['CHECKPOINT: model + channel performance', 'Unit economics validation', 'Best model identified', '38+ customers target'],
-    milestone: '38+ customers, winner clear',
+    week: 15, phase: 'Ads + Scale', phaseColor: '#f59e0b',
+    tasks: ['Full financial review vs projections', 'Inventory utilization report', 'Prepare 6-month scale plan', 'Explore P2P hybrid (let customers list items)'],
   },
   {
-    week: 13, phase: 'Scale Winner', phaseColor: '#f59e0b',
-    tasks: ['All budget → winning model', 'Scale Meta Ads if CAC holds', 'Influencer round 2 (proven ROI)', 'Pre-position more inventory in US'],
-  },
-  {
-    week: 14, phase: 'Scale Winner', phaseColor: '#f59e0b',
-    tasks: ['48+ customers', 'Test TikTok organic', 'Customer retention analysis', 'Plan P2P hybrid (Phase 2)'],
-    milestone: '48+ customers, profitable',
-  },
-  {
-    week: 15, phase: 'Scale Winner', phaseColor: '#f59e0b',
-    tasks: ['Full financial review', 'Inventory utilization report', 'Prepare 6-month scale plan', 'Explore: let customers list their own items?'],
-  },
-  {
-    week: 16, phase: 'Scale Winner', phaseColor: '#f59e0b',
+    week: 16, phase: 'Ads + Scale', phaseColor: '#f59e0b',
     tasks: ['55+ customers target', 'MRR $5,800+', 'Winning model + channel confirmed', 'Scale plan or pivot decision'],
     milestone: '55+ customers, $5.8K MRR',
   },
