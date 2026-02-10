@@ -1,0 +1,28 @@
+import { ProgressItem } from '@/types'
+
+export const progressItems: ProgressItem[] = [
+  { title: 'US LLC exists', done: true },
+  { title: 'Inventory analyzed (2,347 items, $587K retail)', done: true },
+  { title: 'Both brands defined (rotate + ÉDIT)', done: true },
+  { title: '3 business models with unit economics', done: true },
+  { title: 'Demo landing pages built (Vercel)', done: true },
+  { title: 'Dashboard with model comparison, projections, risks', done: true },
+  { title: 'DHL contact identified (−30% discount)', done: true },
+  { title: 'Customer journeys documented', done: true },
+  { title: 'Security deposit & policies defined', done: true },
+  { title: 'Damage, late return, cancellation policies set', done: true },
+  { title: 'Inventory tracking plan (Google Sheet MVP)', done: true },
+  { title: 'Terms of Service drafted', done: false },
+  { title: 'Privacy Policy drafted', done: false },
+  { title: 'Rental Agreement template created', done: false },
+  { title: 'Instagram accounts created', done: false },
+  { title: 'DHL account setup', done: false },
+  { title: 'Domains purchased', done: false },
+  { title: 'First content posted', done: false },
+  { title: 'First DM sale', done: false },
+  { title: 'Pre-position items to US contact', done: false },
+  { title: 'Stripe payment links configured', done: false },
+  { title: 'Micro-influencers identified', done: false },
+  { title: 'Checkout flows built', done: false },
+  { title: 'Google Sheet inventory tracker set up', done: false },
+]

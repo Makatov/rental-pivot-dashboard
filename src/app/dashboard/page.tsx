@@ -13,6 +13,10 @@ import { InventoryCharts } from '@/components/dashboard/inventory-charts'
 import { CustomerJourneys } from '@/components/dashboard/customer-journeys'
 import { PoliciesSection } from '@/components/dashboard/policies-section'
 import { OperationsChecklist } from '@/components/dashboard/operations-checklist'
+import { AcquisitionFunnel } from '@/components/dashboard/acquisition-funnel'
+import { CompetitorIntel } from '@/components/dashboard/competitor-intel'
+import { GoNoGo } from '@/components/dashboard/go-no-go'
+import { ProjectProgress } from '@/components/dashboard/project-progress'
 import { Milestones } from '@/components/dashboard/milestones'
 
 export default function DashboardPage() {
@@ -37,11 +41,15 @@ export default function DashboardPage() {
         <DecisionsBoard />
         <TimelineChart />
         <BudgetBurn />
+        <AcquisitionFunnel />
         <FinancialProjections />
         <RiskHeatmap />
+        <CompetitorIntel />
         <InventoryCharts />
         <OperationsChecklist />
+        <GoNoGo />
         <Milestones />
+        <ProjectProgress />
 
         <div className="h-4" />
       </div>

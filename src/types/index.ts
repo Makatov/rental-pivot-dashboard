@@ -146,6 +146,35 @@ export interface LegalItem {
   done: boolean
 }
 
+export interface AcquisitionPhase {
+  id: string
+  name: string
+  weeks: string
+  budget: number
+  expectedCustomers: string
+  cac: string
+  description: string
+  color: string
+}
+
+export interface Competitor {
+  id: string
+  name: string
+  lesson: string
+  verdict: 'blueprint' | 'warning' | 'evolution' | 'neutral'
+  detail: string
+}
+
+export interface GoNoGoCriteria {
+  label: string
+  conditions: string[]
+}
+
+export interface ProgressItem {
+  title: string
+  done: boolean
+}
+
 export interface BusinessModel {
   id: string
   brand: 'rotate' | 'edit'
