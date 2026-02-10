@@ -21,12 +21,12 @@ export function OperationsChecklist() {
             <Badge variant="warning" className="text-[9px] px-1.5 py-0 ml-auto">MVP</Badge>
           </div>
           <p className="text-[10px] text-gray-500">
-            Google Sheet for &lt;50 items. Columns: SKU, Item, Brand, Status, Customer, Ship Date, Return Date, Location.
-            Pre-positioned items (20-30) on separate tab.
+            Built in code. Statuses: available → rented → cleaning → available. Fields: SKU, Item, Brand, Status, Customer, Ship Date, Return Date, Location.
+            Pre-positioned items (20-30) tracked separately.
           </p>
           <div className="flex gap-1.5 text-[9px]">
-            <Badge variant="info" className="text-[9px] px-1.5 py-0">Now: Google Sheet</Badge>
-            <Badge variant="secondary" className="text-[9px] px-1.5 py-0">Phase 2: Airtable</Badge>
+            <Badge variant="info" className="text-[9px] px-1.5 py-0">In-app tracking</Badge>
+            <Badge variant="secondary" className="text-[9px] px-1.5 py-0">Phase 2: Admin panel</Badge>
           </div>
         </CardContent>
       </Card>
