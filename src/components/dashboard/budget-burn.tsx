@@ -66,29 +66,50 @@ export function BudgetBurn() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Break-even target (3 models)</span>
-              <span className="font-bold">{breakEven.combined.subscribers} subscribers</span>
+              <span className="text-gray-500">Fixed costs/mo</span>
+              <span className="font-bold">${breakEven.fixedCosts}/mo</span>
             </div>
-            <div className="flex justify-between text-sm">
-              <span className="text-gray-500">Target week</span>
-              <span className="font-bold">Week {breakEven.combined.targetWeek}</span>
-            </div>
+
+            {/* Scenario break-even */}
             <div className="border-t pt-3 space-y-2">
+              <p className="text-xs font-medium text-gray-500 uppercase">Break-even by scenario</p>
               <div className="flex justify-between text-xs">
-                <span>Avg contribution margin</span>
-                <span className="font-semibold">${breakEven.combined.avgContributionMargin}/sub/mo</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-red-500" />
+                  Pessimist
+                </span>
+                <span className="font-semibold text-red-600">{breakEven.scenarios.pessimist.breakEvenMonth}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>Fixed costs/mo</span>
-                <span className="font-semibold">${breakEven.combined.fixedCosts.toLocaleString()}</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-blue-500" />
+                  Realist
+                </span>
+                <span className="font-semibold text-blue-600">{breakEven.scenarios.realist.breakEvenMonth}</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>rotate — Subscription</span>
-                <span className="font-semibold">{breakEven.rotate.subscribers} subs (41% margin)</span>
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  Optimist
+                </span>
+                <span className="font-semibold text-emerald-600">{breakEven.scenarios.optimist.breakEvenMonth}</span>
+              </div>
+            </div>
+
+            {/* Per-model contribution */}
+            <div className="border-t pt-3 space-y-2">
+              <p className="text-xs font-medium text-gray-500 uppercase">Contribution per model</p>
+              <div className="flex justify-between text-xs">
+                <span>R2 rotate — $119 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.r2.contributionMargin}/sub</span>
               </div>
               <div className="flex justify-between text-xs">
-                <span>ÉDIT — Membership + Event</span>
-                <span className="font-semibold">{breakEven.edit.subscribers} subs</span>
+                <span>E1 membership — $140 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.e1.contributionMargin}/sub</span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span>E3 event — $134 ARPU</span>
+                <span className="font-semibold">${breakEven.perModel.e3.contributionMargin}/rental</span>
               </div>
             </div>
           </CardContent>

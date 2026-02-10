@@ -48,12 +48,16 @@ export interface BudgetItem {
 export interface MonthProjection {
   month: number
   label: string
-  subscribers: number
+  r2: number
+  e1: number
+  e3: number
   revenue: number
   costs: number
   net: number
   cumulative: number
 }
+
+export type ScenarioKey = 'pessimist' | 'realist' | 'optimist'
 
 export interface Risk {
   id: string
