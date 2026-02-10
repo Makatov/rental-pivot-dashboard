@@ -56,7 +56,7 @@ export const brandImages = {
 
 /** Hero background images for each brand landing */
 export const editHeroImage = brandImages.dior.hero
-export const rotateHeroImage = 'https://assets.burberry.com/is/image/Burberryltd/419BD042-132F-4FC3-97B8-576602037E13'
+export const rotateHeroImage = 'https://assets.burberry.com/is/image/Burberryltd/F906DE79-7417-4C38-920D-58467E6D98BA'
 
 /** Collection banner images for ÉDIT */
 export const editCollectionImages = {
