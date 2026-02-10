@@ -66,8 +66,8 @@ export function BudgetBurn() {
           </CardHeader>
           <CardContent className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-gray-500">ROTATE target (NYC first)</span>
-              <span className="font-bold">{breakEven.rotate.subscribers} subscribers</span>
+              <span className="text-gray-500">Combined target (7 models)</span>
+              <span className="font-bold">{breakEven.combined.subscribers} subscribers</span>
             </div>
             <div className="flex justify-between text-sm">
               <span className="text-gray-500">Target week</span>
@@ -75,15 +75,19 @@ export function BudgetBurn() {
             </div>
             <div className="border-t pt-3 space-y-2">
               <div className="flex justify-between text-xs">
-                <span>Contribution margin</span>
-                <span className="font-semibold">${breakEven.rotate.contributionMargin}/sub/mo</span>
+                <span>Avg contribution margin</span>
+                <span className="font-semibold">${breakEven.combined.avgContributionMargin}/sub/mo</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span>Fixed costs/mo</span>
                 <span className="font-semibold">${breakEven.combined.fixedCosts.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-xs text-gray-400">
-                <span>EDIT (later)</span>
+              <div className="flex justify-between text-xs">
+                <span>rotate (3 models)</span>
+                <span className="font-semibold">{breakEven.rotate.subscribers} subs</span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span>ÉDIT (4 models)</span>
                 <span className="font-semibold">{breakEven.edit.subscribers} subs</span>
               </div>
             </div>

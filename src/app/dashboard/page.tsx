@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { StatusOverview } from '@/components/dashboard/status-overview'
 import { DecisionsBoard } from '@/components/dashboard/decisions-board'
+import { ModelComparison } from '@/components/dashboard/model-comparison'
 import { TimelineChart } from '@/components/dashboard/timeline-chart'
 import { BudgetBurn } from '@/components/dashboard/budget-burn'
 import { FinancialProjections } from '@/components/dashboard/financial-projections'
@@ -27,6 +28,7 @@ export default function DashboardPage() {
       {/* Content */}
       <div className="max-w-lg mx-auto px-4 py-4 space-y-7">
         <StatusOverview />
+        <ModelComparison />
         <DecisionsBoard />
         <TimelineChart />
         <BudgetBurn />

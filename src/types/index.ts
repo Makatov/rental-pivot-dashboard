@@ -118,3 +118,32 @@ export interface Feature {
   description: string
   icon: string
 }
+
+export interface BusinessModel {
+  id: string
+  brand: 'rotate' | 'edit'
+  name: string
+  subtitle: string
+  type: 'subscription' | 'rental' | 'membership' | 'box'
+  pricing: {
+    display: string
+    monthlyEquivalent: number
+    details: string
+  }
+  mechanics: {
+    items: string
+    swaps: string
+    buyout: string
+    commitment: string
+  }
+  economics: {
+    revenuePerCustomer: number
+    shippingPerMonth: number
+    otherVariable: number
+    contributionMargin: number
+    marginPercent: number
+  }
+  testSegment: string
+  keyAdvantage: string
+  keyRisk: string
+}

@@ -1,14 +1,14 @@
 import { Milestone } from '@/types'
 
-// v2 — 16-week NYC-first milestones
+// v3 — multi-model testing milestones
 export const milestones: Milestone[] = [
-  { week: 2, title: 'Domain + Instagram Live', criteria: 'Brand presence online', done: false },
-  { week: 4, title: 'Waitlist + Items Shipped', criteria: '100+ signups, items in transit', done: false },
-  { week: 6, title: 'MVP Ready', criteria: 'Site functional, items at NYC warehouse', done: false },
-  { week: 8, title: 'System Tested', criteria: 'Full cycle validated, 200+ waitlist', done: false },
-  { week: 9, title: 'ROTATE Launch (NYC)', criteria: '5-10 paying subscribers', done: false },
-  { week: 10, title: 'First Returns', criteria: '10-15 subs, ops running', done: false },
-  { week: 12, title: 'Checkpoint 1', criteria: '15-20 subs, unit economics validated', done: false },
-  { week: 14, title: 'Scale Check', criteria: '25-30 subs, CAC < $80', done: false },
-  { week: 16, title: 'GO / NO-GO', criteria: '30+ subs, positive unit economics → London?', done: false },
+  { week: 2, title: 'Both Brands Online', criteria: 'Domains + Instagram for rotate & ÉDIT', done: false },
+  { week: 4, title: 'DHL Tested + Waitlist', criteria: 'Test shipment arrived, 100+ combined waitlist', done: false },
+  { week: 6, title: 'All 7 Models Testable', criteria: 'Checkout flows working, beta testers using each model', done: false },
+  { week: 8, title: 'Launch Ready', criteria: '200+ waitlist, 7 ad sets prepared, packaging ready', done: false },
+  { week: 9, title: 'Launch All 7 Models', criteria: 'Meta Ads live, first orders across models', done: false },
+  { week: 10, title: 'First Performance Data', criteria: '15+ customers, model-level CAC visible', done: false },
+  { week: 12, title: 'Kill / Scale Decision', criteria: 'Kill bottom 2, reallocate to top 3. 25+ customers.', done: false },
+  { week: 14, title: 'Validated Models', criteria: '40+ customers on top 3 models, positive unit economics', done: false },
+  { week: 16, title: 'Final Evaluation', criteria: 'Top 1-2 models identified → scale plan for next 6 months', done: false },
 ]
