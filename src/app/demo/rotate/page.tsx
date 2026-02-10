@@ -8,6 +8,7 @@ import { CTASection } from '@/components/landing/cta-section'
 import { rotateTheme } from '@/data/brand-themes'
 import { demoCatalog, rotateBrands } from '@/data/demo-catalog'
 import { rotateTestimonials } from '@/data/testimonials'
+import { rotateHeroImage } from '@/data/brand-images'
 
 const rotateItems = demoCatalog.filter(item =>
   ['Dolce Gabbana', 'Gucci', 'Burberry', 'Max Mara', 'Stella McCartney', 'Valentino', 'Fendi'].includes(item.brand)
@@ -16,7 +17,7 @@ const rotateItems = demoCatalog.filter(item =>
 export default function RotateDemoPage() {
   return (
     <BrandLayout brand="rotate" theme={rotateTheme}>
-      <HeroSection theme={rotateTheme} variant="conversion" />
+      <HeroSection theme={rotateTheme} variant="conversion" backgroundImage={rotateHeroImage} />
       <BrandTicker />
       <HowItWorks variant="detailed" />
       <TrendingGrid items={rotateItems} brands={rotateBrands} />

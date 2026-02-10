@@ -2,11 +2,12 @@ import { DemoCatalogItem } from '@/types'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import { editCollectionImages } from '@/data/brand-images'
 
 const collections = [
-  { title: 'Evening Edit', subtitle: 'Cocktails to galas', filter: 'Dresses' },
-  { title: 'The Working Wardrobe', subtitle: 'Office to after-hours', filter: 'Tops' },
-  { title: 'Weekend Luxe', subtitle: 'Effortless off-duty', filter: 'Shoes' },
+  { title: 'Evening Edit', subtitle: 'Cocktails to galas', filter: 'Dresses', image: editCollectionImages.evening },
+  { title: 'The Working Wardrobe', subtitle: 'Office to after-hours', filter: 'Tops', image: editCollectionImages.workwear },
+  { title: 'Weekend Luxe', subtitle: 'Effortless off-duty', filter: 'Shoes', image: editCollectionImages.weekend },
 ]
 
 interface CollectionsGridProps {
@@ -26,12 +27,12 @@ export function CollectionsGrid({ items }: CollectionsGridProps) {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {collections.map((col) => {
-            const item = items.find(i => i.category === col.filter) || items[0]
+            const fallbackItem = items.find(i => i.category === col.filter) || items[0]
             return (
               <div key={col.title} className="group relative rounded-lg overflow-hidden cursor-pointer">
                 <div className="aspect-[3/4] relative bg-muted">
                   <Image
-                    src={item.imageUrl}
+                    src={col.image || fallbackItem.imageUrl}
                     alt={col.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

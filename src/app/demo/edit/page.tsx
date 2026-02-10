@@ -9,6 +9,7 @@ import { CTASection } from '@/components/landing/cta-section'
 import { editTheme } from '@/data/brand-themes'
 import { demoCatalog } from '@/data/demo-catalog'
 import { editTestimonials } from '@/data/testimonials'
+import { editHeroImage } from '@/data/brand-images'
 
 const editItems = demoCatalog.filter(item =>
   ['Dior', 'Louis Vuitton', 'Brunello Cucinelli', 'Prada', 'Christian Louboutin', 'Fendi'].includes(item.brand)
@@ -17,7 +18,7 @@ const editItems = demoCatalog.filter(item =>
 export default function EditDemoPage() {
   return (
     <BrandLayout brand="edit" theme={editTheme}>
-      <HeroSection theme={editTheme} variant="editorial" />
+      <HeroSection theme={editTheme} variant="editorial" backgroundImage={editHeroImage} />
       <PressBar brand="edit" />
       <HowItWorks variant="minimal" />
       <CollectionsGrid items={editItems} />

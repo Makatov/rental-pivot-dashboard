@@ -1,17 +1,34 @@
 import { BrandTheme } from '@/types'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   theme: BrandTheme
   variant: 'editorial' | 'conversion'
+  backgroundImage?: string
 }
 
-export function HeroSection({ theme, variant }: HeroSectionProps) {
+export function HeroSection({ theme, variant, backgroundImage }: HeroSectionProps) {
   if (variant === 'editorial') {
     return (
-      <section className="min-h-[80vh] flex flex-col justify-center px-4 py-16 bg-background relative">
-        <div className="mx-auto max-w-2xl text-center space-y-5">
+      <section className="min-h-[80vh] flex flex-col justify-center px-4 py-16 relative overflow-hidden">
+        {backgroundImage && (
+          <>
+            <Image
+              src={backgroundImage}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+              unoptimized
+            />
+            <div className="absolute inset-0 bg-background/75" />
+          </>
+        )}
+        {!backgroundImage && <div className="absolute inset-0 bg-background" />}
+        <div className="mx-auto max-w-2xl text-center space-y-5 relative z-10">
           <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
             {theme.city}
           </p>
@@ -36,8 +53,23 @@ export function HeroSection({ theme, variant }: HeroSectionProps) {
 
   // Conversion variant — with pricing, dual CTAs (Rent the Runway style)
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center px-4 py-16 bg-background relative">
-      <div className="mx-auto max-w-2xl text-center space-y-5">
+    <section className="min-h-[80vh] flex flex-col justify-center px-4 py-16 relative overflow-hidden">
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-background/80" />
+        </>
+      )}
+      {!backgroundImage && <div className="absolute inset-0 bg-background" />}
+      <div className="mx-auto max-w-2xl text-center space-y-5 relative z-10">
         <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight lowercase text-primary leading-tight">
           {theme.logoText}
         </h1>
