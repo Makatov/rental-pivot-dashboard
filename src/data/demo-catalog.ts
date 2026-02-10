@@ -32,26 +32,33 @@ export const demoCatalog: DemoCatalogItem[] = [
   { id: 'e3d6f3df-7607-483d-8df6-bd96d76d68a5', brand: 'Burberry', category: 'Shoes', priceKzt: 236700, priceUsd: 493, imagePath: 'f79bb3d9-0dde-4932-85f2-69420991c61a.webp', imageUrl: img('e3d6f3df-7607-483d-8df6-bd96d76d68a5', 'f79bb3d9-0dde-4932-85f2-69420991c61a.webp') },
   { id: 'd0c00e93-9ede-40b1-9e76-c4ac26844210', brand: 'Burberry', category: 'Boots', priceKzt: 69000, priceUsd: 144, imagePath: '042c7c4d-402c-41a8-8c52-e624d62f0cf0.webp', imageUrl: img('d0c00e93-9ede-40b1-9e76-c4ac26844210', '042c7c4d-402c-41a8-8c52-e624d62f0cf0.webp') },
   { id: '3c486b16-c377-4909-9d5c-417f0d469d94', brand: 'Burberry', category: 'Sneakers', priceKzt: 41500, priceUsd: 87, imagePath: '89f08f1e-de10-487a-92a8-0d24e5a93b6b.webp', imageUrl: img('3c486b16-c377-4909-9d5c-417f0d469d94', '89f08f1e-de10-487a-92a8-0d24e5a93b6b.webp') },
-  // Dolce & Gabbana — need to check brand name
-  { id: '0021cac8-c3c1-48e2-9bd5-31e584f93f92', brand: 'Dolce Gabbana', category: 'Shirts', priceKzt: 45000, priceUsd: 94, imagePath: 'b1be6dbd-1da7-4ab6-ab1a-2a8c39597585.webp', imageUrl: img('0021cac8-c3c1-48e2-9bd5-31e584f93f92', 'b1be6dbd-1da7-4ab6-ab1a-2a8c39597585.webp') },
-  // Gucci
-  { id: '017f1a4c-6ad8-4f98-937e-323c8bc620f4', brand: 'Gucci', category: 'Boots', priceKzt: 118400, priceUsd: 247, imagePath: 'f7fe482e-376b-430a-b1dc-06609f37d43b.webp', imageUrl: img('017f1a4c-6ad8-4f98-937e-323c8bc620f4', 'f7fe482e-376b-430a-b1dc-06609f37d43b.webp') },
-  { id: '069e6b67-20c6-4a26-84d6-125f2275ed13', brand: 'Gucci', category: 'Shoes', priceKzt: 160600, priceUsd: 335, imagePath: '75fb30e2-2a09-4467-b7c8-1e065a32f1d0.webp', imageUrl: img('069e6b67-20c6-4a26-84d6-125f2275ed13', '75fb30e2-2a09-4467-b7c8-1e065a32f1d0.webp') },
-  // Max Mara
+  { id: 'd883fe64-1064-423b-be3d-3da23feabc22', brand: 'Burberry', category: 'Shoes', priceKzt: 29500, priceUsd: 61, imagePath: '33e1306b-695b-4773-982b-d71d36b7e3c7.webp', imageUrl: img('d883fe64-1064-423b-be3d-3da23feabc22', '33e1306b-695b-4773-982b-d71d36b7e3c7.webp') },
+  // Dolce & Gabbana (shoes only)
+  { id: 'b8997959-aca4-4325-a442-15f7e1e0d1b4', brand: 'Dolce Gabbana', category: 'Shoes', priceKzt: 369900, priceUsd: 771, imagePath: '4b256838-e4a6-4e68-9ded-cb69f4ee4cb3.webp', imageUrl: img('b8997959-aca4-4325-a442-15f7e1e0d1b4', '4b256838-e4a6-4e68-9ded-cb69f4ee4cb3.webp') },
+  { id: '899ef168-b78b-4e0d-bf0f-68b107cf515f', brand: 'Dolce Gabbana', category: 'Sunglasses', priceKzt: 153900, priceUsd: 321, imagePath: '8bd69c0e-93b5-4783-aa36-db56a5d47a7c.webp', imageUrl: img('899ef168-b78b-4e0d-bf0f-68b107cf515f', '8bd69c0e-93b5-4783-aa36-db56a5d47a7c.webp') },
+  { id: 'f76c7da8-ff39-41e5-a972-cf80cf87e4ac', brand: 'Dolce Gabbana', category: 'Sneakers', priceKzt: 118400, priceUsd: 247, imagePath: '53082684-a787-48be-87b8-68bfcab021cb.webp', imageUrl: img('f76c7da8-ff39-41e5-a972-cf80cf87e4ac', '53082684-a787-48be-87b8-68bfcab021cb.webp') },
+  { id: '389297f2-96c2-4a97-9cb0-3b40adf629e7', brand: 'Dolce Gabbana', category: 'Boots', priceKzt: 102700, priceUsd: 214, imagePath: 'f5d02b70-a8ae-4a3a-a67a-10137fed093b.webp', imageUrl: img('389297f2-96c2-4a97-9cb0-3b40adf629e7', 'f5d02b70-a8ae-4a3a-a67a-10137fed093b.webp') },
+  // Gucci (updated image paths from DB)
+  { id: '1c2fb96d-89ae-41d8-a0fe-429b5310eda2', brand: 'Gucci', category: 'Boots', priceKzt: 272200, priceUsd: 567, imagePath: '6a2d9d30-c8d9-474b-ad1e-51938b109c02.webp', imageUrl: img('1c2fb96d-89ae-41d8-a0fe-429b5310eda2', '6a2d9d30-c8d9-474b-ad1e-51938b109c02.webp') },
+  { id: 'df81f300-ce34-43cc-a093-2652c411cc04', brand: 'Gucci', category: 'Sneakers', priceKzt: 224800, priceUsd: 468, imagePath: '5a1a247e-62b5-44bd-9618-701b396c7ae2.webp', imageUrl: img('df81f300-ce34-43cc-a093-2652c411cc04', '5a1a247e-62b5-44bd-9618-701b396c7ae2.webp') },
+  { id: '069e6b67-20c6-4a26-84d6-125f2275ed13', brand: 'Gucci', category: 'Shoes', priceKzt: 160600, priceUsd: 335, imagePath: 'd7180aa3-49e9-4b17-abf1-65934bde0880.webp', imageUrl: img('069e6b67-20c6-4a26-84d6-125f2275ed13', 'd7180aa3-49e9-4b17-abf1-65934bde0880.webp') },
+  { id: '8b83ed5b-20ad-425d-be65-619312a94a76', brand: 'Gucci', category: 'Sneakers', priceKzt: 98600, priceUsd: 205, imagePath: '3f2ef4b2-f204-43a1-8ac6-c99e095bfc2f.webp', imageUrl: img('8b83ed5b-20ad-425d-be65-619312a94a76', '3f2ef4b2-f204-43a1-8ac6-c99e095bfc2f.webp') },
+  // Max Mara (sunglasses + sneakers)
+  { id: '7e9b961b-479f-4abe-869f-0428c5d9c318', brand: 'Max Mara', category: 'Sunglasses', priceKzt: 118400, priceUsd: 247, imagePath: '04d9c0d4-8033-4171-bff8-c945ed9eb81e.webp', imageUrl: img('7e9b961b-479f-4abe-869f-0428c5d9c318', '04d9c0d4-8033-4171-bff8-c945ed9eb81e.webp') },
   { id: '0371520f-472f-498d-9e4a-4ad5dbd7c699', brand: 'Max Mara', category: 'Shoes', priceKzt: 53100, priceUsd: 111, imagePath: '9efcaf39-f03d-4636-b570-83eee97c551f.webp', imageUrl: img('0371520f-472f-498d-9e4a-4ad5dbd7c699', '9efcaf39-f03d-4636-b570-83eee97c551f.webp') },
-  // Valentino
-  { id: '04af0b11-a696-43ee-b98e-8dcdec759f63', brand: 'Valentino', category: 'Dresses', priceKzt: 59100, priceUsd: 123, imagePath: '97381618-9d37-4865-aae6-40837daae34b.webp', imageUrl: img('04af0b11-a696-43ee-b98e-8dcdec759f63', '97381618-9d37-4865-aae6-40837daae34b.webp') },
-  // Stella McCartney
-  { id: '0756ebbe-862e-410b-8a5a-94a175dc0a6a', brand: 'Stella McCartney', category: 'Boots', priceKzt: 71100, priceUsd: 148, imagePath: 'c4443a59-2f55-40e5-9e30-7d047ac4a7a4.webp', imageUrl: img('0756ebbe-862e-410b-8a5a-94a175dc0a6a', 'c4443a59-2f55-40e5-9e30-7d047ac4a7a4.webp') },
-  // Extra Louboutin for rotate
-  { id: '3b6f5275-b0c8-42e2-89e1-2b97ab7da9ca', brand: 'Christian Louboutin', category: 'Shoes', priceKzt: 79000, priceUsd: 165, imagePath: '97d722f8-01ba-4d65-91c1-ab4762a46b68.webp', imageUrl: img('3b6f5275-b0c8-42e2-89e1-2b97ab7da9ca', '97d722f8-01ba-4d65-91c1-ab4762a46b68.webp') },
-  { id: '1a2d8c1f-099b-451b-9bdf-78d0d7dbb230', brand: 'Christian Louboutin', category: 'Shoes', priceKzt: 88800, priceUsd: 185, imagePath: '37c53035-4cf9-4408-a65d-e23190712098.webp', imageUrl: img('1a2d8c1f-099b-451b-9bdf-78d0d7dbb230', '37c53035-4cf9-4408-a65d-e23190712098.webp') },
+  // Valentino (shoes/boots only)
+  { id: '6018f361-54fe-4b71-8f96-bcf65b2d89a1', brand: 'Valentino', category: 'Boots', priceKzt: 188100, priceUsd: 392, imagePath: '587f6c64-ed19-4fe7-9ad6-b79d948398fb.webp', imageUrl: img('6018f361-54fe-4b71-8f96-bcf65b2d89a1', '587f6c64-ed19-4fe7-9ad6-b79d948398fb.webp') },
+  { id: '89d07221-7f77-4bb9-8549-654abf42c845', brand: 'Valentino', category: 'Shoes', priceKzt: 152700, priceUsd: 318, imagePath: 'a7f746e3-6232-4e8f-bd4f-ad096c02d8e8.webp', imageUrl: img('89d07221-7f77-4bb9-8549-654abf42c845', 'a7f746e3-6232-4e8f-bd4f-ad096c02d8e8.webp') },
+  { id: 'e3ff56e5-b465-4243-b460-dd47d97b3072', brand: 'Valentino', category: 'Sneakers', priceKzt: 118400, priceUsd: 247, imagePath: '0644c3e9-0642-46fd-b9c4-aaaac4fac816.webp', imageUrl: img('e3ff56e5-b465-4243-b460-dd47d97b3072', '0644c3e9-0642-46fd-b9c4-aaaac4fac816.webp') },
+  // Stella McCartney (updated paths from DB)
+  { id: '9303435f-0644-4a14-bce4-dee574a6432a', brand: 'Stella McCartney', category: 'Boots', priceKzt: 82900, priceUsd: 173, imagePath: '1c822dcf-6dfb-49cb-9b60-ba5c55ea13cd.webp', imageUrl: img('9303435f-0644-4a14-bce4-dee574a6432a', '1c822dcf-6dfb-49cb-9b60-ba5c55ea13cd.webp') },
+  { id: 'bffcde78-8e4f-490b-adc2-569d82307253', brand: 'Stella McCartney', category: 'Sneakers', priceKzt: 71100, priceUsd: 148, imagePath: 'd64896c9-f68d-4972-b4fd-8dda442600f6.webp', imageUrl: img('bffcde78-8e4f-490b-adc2-569d82307253', 'd64896c9-f68d-4972-b4fd-8dda442600f6.webp') },
+  // Fendi
+  { id: '6c059817-dd4e-4868-b524-78fd2fd3728b', brand: 'Fendi', category: 'Boots', priceKzt: 224900, priceUsd: 469, imagePath: '3627a4bf-e834-4ba9-89dc-b837c421ae34.webp', imageUrl: img('6c059817-dd4e-4868-b524-78fd2fd3728b', '3627a4bf-e834-4ba9-89dc-b837c421ae34.webp') },
+  { id: 'cb4a0e08-b719-4bb3-bea1-0243e3953089', brand: 'Fendi', category: 'Sneakers', priceKzt: 106600, priceUsd: 222, imagePath: 'b844dc33-3788-4b42-aefd-df0edc54a751.webp', imageUrl: img('cb4a0e08-b719-4bb3-bea1-0243e3953089', 'b844dc33-3788-4b42-aefd-df0edc54a751.webp') },
   // Extra Dior
   { id: '5ef46cb3-cbeb-438a-b799-ac061ad4e8ba', brand: 'Dior', category: 'Boots', priceKzt: 259300, priceUsd: 540, imagePath: 'a9ec6e0b-cbc7-4e7b-8161-050fa581889c.webp', imageUrl: img('5ef46cb3-cbeb-438a-b799-ac061ad4e8ba', 'a9ec6e0b-cbc7-4e7b-8161-050fa581889c.webp') },
   { id: 'f553f592-07de-45d4-bb84-1de8219416be', brand: 'Dior', category: 'Sneakers', priceKzt: 79000, priceUsd: 165, imagePath: '6de0b2fb-e1ec-4b19-b697-e56037a9c6a4.webp', imageUrl: img('f553f592-07de-45d4-bb84-1de8219416be', '6de0b2fb-e1ec-4b19-b697-e56037a9c6a4.webp') },
-  // Extra Burberry
-  { id: 'cdd01957-83d5-492e-bc45-fa04e8fefda6', brand: 'Burberry', category: 'Shoes', priceKzt: 50900, priceUsd: 106, imagePath: '229f994b-955f-4d4e-be7c-c2ce709752e0.webp', imageUrl: img('cdd01957-83d5-492e-bc45-fa04e8fefda6', '229f994b-955f-4d4e-be7c-c2ce709752e0.webp') },
-  { id: '60c464fb-fce3-4c97-bda3-24c45a4c7f09', brand: 'Burberry', category: 'Sneakers', priceKzt: 34400, priceUsd: 72, imagePath: 'fc65e67b-c079-4548-9016-deff8ff3ebf6.webp', imageUrl: img('60c464fb-fce3-4c97-bda3-24c45a4c7f09', 'fc65e67b-c079-4548-9016-deff8ff3ebf6.webp') },
 ]
 
 export const rotateBrands = ['Burberry', 'Gucci', 'Max Mara', 'Stella McCartney', 'Valentino', 'Christian Louboutin', 'Dolce Gabbana']

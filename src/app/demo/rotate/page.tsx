@@ -11,7 +11,7 @@ import { rotateTestimonials } from '@/data/testimonials'
 import { rotateHeroImage } from '@/data/brand-images'
 
 const rotateItems = demoCatalog.filter(item =>
-  ['Dolce Gabbana', 'Gucci', 'Burberry', 'Max Mara', 'Stella McCartney', 'Valentino', 'Fendi'].includes(item.brand)
+  rotateBrands.includes(item.brand) || ['Fendi'].includes(item.brand)
 )
 
 export default function RotateDemoPage() {
