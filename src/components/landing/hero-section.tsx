@@ -66,11 +66,11 @@ export function HeroSection({ theme, variant, backgroundImage }: HeroSectionProp
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+          {/* clean edge — no overlay */}
         </div>
       )}
       {/* Text content */}
-      <div className="px-4 pb-12 -mt-16 relative z-10">
+      <div className="px-4 py-10 relative z-10">
         <div className="mx-auto max-w-2xl text-center space-y-4">
           <h1 className="font-heading text-4xl sm:text-5xl font-extrabold tracking-tight lowercase text-primary leading-tight">
             {theme.logoText}
