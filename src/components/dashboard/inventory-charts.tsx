@@ -12,11 +12,15 @@ const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip), { ssr: fa
 const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer), { ssr: false })
 const PieChart = dynamic(() => import('recharts').then(m => m.PieChart), { ssr: false })
 const Pie = dynamic(() => import('recharts').then(m => m.Pie), { ssr: false })
-const Cell = dynamic(() => import('recharts').then(m => m.Cell), { ssr: false })
 
 const BRAND_COLORS = ['#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#ddd6fe', '#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#ddd6fe', '#6366f1', '#8b5cf6', '#a78bfa', '#c4b5fd', '#ddd6fe']
 const CONDITION_COLORS = ['#10b981', '#34d399', '#6ee7b7', '#a7f3d0', '#d1fae5']
 const PRICE_COLORS = ['#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe', '#dbeafe']
+
+// Inject fill colors directly into data
+const brandChartData = brandData.map((item, i) => ({ ...item, fill: BRAND_COLORS[i] }))
+const conditionChartData = conditionData.map((item, i) => ({ ...item, fill: CONDITION_COLORS[i] }))
+const priceChartData = priceDistribution.map((item, i) => ({ ...item, fill: PRICE_COLORS[i] }))
 
 export function InventoryCharts() {
   return (
@@ -29,13 +33,11 @@ export function InventoryCharts() {
         <CardContent>
           <div className="h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={brandData} layout="vertical" margin={{ left: 10, right: 5, top: 0, bottom: 0 }}>
+              <BarChart data={brandChartData} layout="vertical" margin={{ left: 10, right: 5, top: 0, bottom: 0 }}>
                 <XAxis type="number" tick={{ fontSize: 10 }} />
                 <YAxis type="category" dataKey="brand" tick={{ fontSize: 9 }} width={100} />
                 <Tooltip />
-                <Bar dataKey="count" name="Items" radius={[0, 4, 4, 0]}>
-                  {brandData.map((_, i) => <Cell key={i} fill={BRAND_COLORS[i]} />)}
-                </Bar>
+                <Bar dataKey="count" name="Items" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -67,9 +69,7 @@ export function InventoryCharts() {
             <div className="h-[160px]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={conditionData} dataKey="count" nameKey="condition" cx="50%" cy="50%" innerRadius={30} outerRadius={55}>
-                    {conditionData.map((_, i) => <Cell key={i} fill={CONDITION_COLORS[i]} />)}
-                  </Pie>
+                  <Pie data={conditionChartData} dataKey="count" nameKey="condition" cx="50%" cy="50%" innerRadius={30} outerRadius={55} />
                   <Tooltip />
                 </PieChart>
               </ResponsiveContainer>
@@ -93,9 +93,7 @@ export function InventoryCharts() {
             <div className="h-[160px]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={priceDistribution} dataKey="count" nameKey="range" cx="50%" cy="50%" innerRadius={30} outerRadius={55}>
-                    {priceDistribution.map((_, i) => <Cell key={i} fill={PRICE_COLORS[i]} />)}
-                  </Pie>
+                  <Pie data={priceChartData} dataKey="count" nameKey="range" cx="50%" cy="50%" innerRadius={30} outerRadius={55} />
                   <Tooltip />
                 </PieChart>
               </ResponsiveContainer>
