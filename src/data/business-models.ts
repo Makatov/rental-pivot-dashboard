@@ -79,24 +79,24 @@ const r2FromKz: BusinessModel = {
     revenuePerCustomer: 119,
     costs: {
       shippingOut: 7.50,       // swap item from KZ (batch 4)
-      shippingReturn: 17.50,   // domestic to hub $10 + batch to KZ $7.50
+      shippingReturn: 10.00,   // domestic return only — item stays in US
       customs: 18.75,          // $15 swap customs + $3.75 initial set amort
-      cleaning: 8.00,          // KZ cleaning (cheaper than US $20)
+      cleaning: 20.00,         // US dry clean (item stays in US)
       damageReserve: 5.00,
       stripeFees: 3.75,        // 2.9% × $119 + $0.30
       depreciation: 20.00,     // 2 items × $10/mo
     },
-    totalVariable: 80.50,
-    contributionMargin: 38.50,
-    marginPercent: 32,
+    totalVariable: 85.00,
+    contributionMargin: 34.00,
+    marginPercent: 29,
     cac: 60,
-    paybackMonths: 1.6,
-    ltv: 462,                  // $38.50 × 12
-    ltvCacRatio: '8:1',
+    paybackMonths: 1.8,
+    ltv: 408,                  // $34.00 × 12
+    ltvCacRatio: '7:1',
   },
   testSegment: 'US nationwide — fashion-forward women 22-35 who want variety',
-  keyAdvantage: 'No US inventory needed. Ship sets from KZ, returns batch back. KZ cleaning = $8 vs $20 US.',
-  keyRisk: 'Swap logistics KZ↔US add cost (32% margin). 7-10 day swap turnaround. Needs batch coordination.',
+  keyAdvantage: 'No US inventory needed initially. Ship from KZ, items stay in US after delivery. Builds US inventory over time.',
+  keyRisk: 'Higher variable cost (29% margin) vs pre-positioned (41%). 7-10 day initial delivery from KZ.',
 }
 
 // ── E1 Membership — Pre-positioned (US inventory) ──────────────────
