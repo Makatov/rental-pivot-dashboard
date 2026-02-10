@@ -33,11 +33,9 @@ export function BudgetBurn() {
                     nameKey="category"
                     cx="50%"
                     cy="50%"
-                    innerRadius={50}
-                    outerRadius={80}
+                    innerRadius={45}
+                    outerRadius={75}
                     paddingAngle={2}
-                    label={({ name, payload }: { name?: string; payload?: { percentage?: number } }) => `${name || ''} ${payload?.percentage || ''}%`}
-                    labelLine={false}
                   >
                     {budgetAllocation.map((_, index) => (
                       <Cell key={index} fill={COLORS[index % COLORS.length]} />
