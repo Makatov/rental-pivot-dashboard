@@ -6,11 +6,16 @@ import { budgetAllocation, totalBudget, breakEven } from '@/data/financials'
 
 const PieChart = dynamic(() => import('recharts').then(m => m.PieChart), { ssr: false })
 const Pie = dynamic(() => import('recharts').then(m => m.Pie), { ssr: false })
-const Cell = dynamic(() => import('recharts').then(m => m.Cell), { ssr: false })
 const ResponsiveContainer = dynamic(() => import('recharts').then(m => m.ResponsiveContainer), { ssr: false })
 const Tooltip = dynamic(() => import('recharts').then(m => m.Tooltip), { ssr: false })
 
 const COLORS = ['#6366f1', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#3b82f6', '#64748b', '#d946ef', '#0ea5e9', '#a3a3a3']
+
+// Inject fill color directly into data so recharts picks it up without Cell
+const chartData = budgetAllocation.map((item, i) => ({
+  ...item,
+  fill: COLORS[i % COLORS.length],
+}))
 
 export function BudgetBurn() {
   return (
@@ -28,7 +33,7 @@ export function BudgetBurn() {
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
-                    data={budgetAllocation}
+                    data={chartData}
                     dataKey="amount"
                     nameKey="category"
                     cx="50%"
@@ -36,11 +41,7 @@ export function BudgetBurn() {
                     innerRadius={45}
                     outerRadius={75}
                     paddingAngle={2}
-                  >
-                    {budgetAllocation.map((_, index) => (
-                      <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
+                  />
                   <Tooltip formatter={(value) => `$${Number(value).toLocaleString()}`} />
                 </PieChart>
               </ResponsiveContainer>
