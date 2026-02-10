@@ -2,25 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 6% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 6% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 6% 10%;
+    --primary: 20 6% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 40 20% 96%;
+    --secondary-foreground: 20 6% 10%;
+    --muted: 40 14% 93%;
+    --muted-foreground: 20 6% 40%;
+    --accent: 40 14% 93%;
+    --accent-foreground: 20 6% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 10% 88%;
+    --input: 40 10% 88%;
+    --ring: 20 6% 10%;
+    --radius: 0.75rem;
+    --font-heading: var(--font-inter);
+    --font-body: var(--font-inter);
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
+  [data-brand="edit"] {
+    --background: 43 38% 95%;
+    --foreground: 25 6% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 6% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 6% 20%;
+    --primary: 41 78% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 50% 90%;
+    --secondary-foreground: 25 6% 20%;
+    --muted: 40 20% 91%;
+    --muted-foreground: 25 6% 40%;
+    --accent: 35 50% 90%;
+    --accent-foreground: 25 6% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 18% 85%;
+    --input: 40 18% 85%;
+    --ring: 41 78% 46%;
+    --font-heading: var(--font-playfair);
+    --font-body: var(--font-lora);
+  }
+
+  [data-brand="rotate"] {
+    --background: 43 38% 95%;
+    --foreground: 25 6% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 6% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 6% 20%;
+    --primary: 149 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 93%;
+    --secondary-foreground: 25 6% 20%;
+    --muted: 40 20% 91%;
+    --muted-foreground: 25 6% 40%;
+    --accent: 40 20% 93%;
+    --accent-foreground: 25 6% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 18% 85%;
+    --input: 40 18% 85%;
+    --ring: 149 100% 35%;
+    --font-heading: var(--font-inter);
+    --font-body: var(--font-dm-sans);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-gray-200;
   }
 }
 

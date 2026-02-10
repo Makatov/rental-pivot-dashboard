@@ -98,15 +98,22 @@ export interface BrandTheme {
   currency: string
   tagline: string
   heroSubtitle: string
-  fontHeading: string
-  fontBody: string
-  colors: {
-    primary: string
-    bg: string
-    text: string
-    accent: string
-    muted: string
-    card: string
-    cardText: string
-  }
+}
+
+export interface Testimonial {
+  name: string
+  city: string
+  quote: string
+  avatar?: string
+}
+
+export interface FAQ {
+  question: string
+  answer: string
+}
+
+export interface Feature {
+  title: string
+  description: string
+  icon: string
 }

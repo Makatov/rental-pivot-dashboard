@@ -1,43 +1,54 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 
 export default function DemoChooser() {
   return (
-    <main className="min-h-screen bg-[#F9F6ED]">
+    <main className="min-h-screen bg-background">
       {/* Back button */}
       <div className="fixed top-3 left-3 z-50">
-        <Link href="/" className="flex items-center gap-1 px-2.5 py-1 bg-white/90 backdrop-blur-md rounded-full shadow-sm text-xs text-[#3A3530]">
-          <ArrowLeft className="h-3.5 w-3.5" />
-          Back
+        <Link href="/">
+          <Button variant="secondary" size="sm" className="rounded-full gap-1 shadow-sm">
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Back
+          </Button>
         </Link>
       </div>
 
-      {/* ÉDIT — gold on warm cream */}
+      {/* ÉDIT */}
       <Link href="/demo/edit" className="block">
-        <section className="min-h-[50vh] bg-[#F9F6ED] flex flex-col items-center justify-center px-5 py-12 relative group cursor-pointer border-b border-[#F0EDE4]">
-          <p className="text-[#D4A017] text-[11px] tracking-[0.3em] uppercase mb-3">London</p>
-          <h2 className="text-4xl font-playfair font-extrabold mb-2" style={{ color: '#D4A017' }}>ÉDIT</h2>
-          <p className="text-[#3A3530]/60 text-xs max-w-xs text-center font-lora">
+        <section data-brand="edit" className="min-h-[50vh] bg-background flex flex-col items-center justify-center px-5 py-12 group cursor-pointer border-b border-border">
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">London</p>
+          <h2 className="font-heading text-4xl font-extrabold text-primary tracking-wide mb-2">
+            ÉDIT
+          </h2>
+          <p className="text-muted-foreground text-xs max-w-xs text-center font-body">
             A wardrobe that moves with you.
           </p>
-          <p className="text-[#3A3530]/40 text-[10px] mt-3">Premium luxury &middot; From £149/mo</p>
-          <div className="mt-5 px-5 py-1.5 border border-[#D4A017] rounded-full text-[#D4A017] text-xs group-hover:bg-[#D4A017] group-hover:text-white transition-all">
-            Explore ÉDIT &rarr;
+          <p className="text-muted-foreground/60 text-[10px] mt-3">Premium luxury &middot; From £149/mo</p>
+          <div className="mt-5">
+            <Button variant="outline" size="sm" className="rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              Explore ÉDIT &rarr;
+            </Button>
           </div>
         </section>
       </Link>
 
-      {/* rotate — green on warm cream */}
+      {/* rotate */}
       <Link href="/demo/rotate" className="block">
-        <section className="min-h-[50vh] bg-[#F9F6ED] flex flex-col items-center justify-center px-5 py-12 relative group cursor-pointer">
-          <p className="text-[#00B463] text-[11px] tracking-[0.3em] uppercase mb-3">New York</p>
-          <h2 className="text-4xl font-extrabold mb-2 lowercase" style={{ color: '#00B463' }}>rotate</h2>
-          <p className="text-[#3A3530]/60 text-xs max-w-xs text-center">
+        <section data-brand="rotate" className="min-h-[50vh] bg-background flex flex-col items-center justify-center px-5 py-12 group cursor-pointer">
+          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">New York</p>
+          <h2 className="font-heading text-4xl font-extrabold text-primary lowercase tracking-tight mb-2">
+            rotate
+          </h2>
+          <p className="text-muted-foreground text-xs max-w-xs text-center font-body">
             Everyday outfits, handled.
           </p>
-          <p className="text-[#3A3530]/40 text-[10px] mt-3">Accessible luxury &middot; From $89/mo</p>
-          <div className="mt-5 px-5 py-1.5 border border-[#00B463] rounded-full text-[#00B463] text-xs group-hover:bg-[#00B463] group-hover:text-white transition-all">
-            Explore rotate &rarr;
+          <p className="text-muted-foreground/60 text-[10px] mt-3">Accessible luxury &middot; From $89/mo</p>
+          <div className="mt-5">
+            <Button variant="outline" size="sm" className="rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+              Explore rotate &rarr;
+            </Button>
           </div>
         </section>
       </Link>
